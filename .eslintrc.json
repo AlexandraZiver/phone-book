@@ -55,9 +55,9 @@
     "max-len": [
       "warn",
       {
-        "code": 120,
+        "code": 100,
         "tabWidth": 2,
-        "comments": 120,
+        "comments": 100,
         "ignoreComments": false,
         "ignoreTrailingComments": true,
         "ignoreUrls": true,
