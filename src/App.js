@@ -1,6 +1,7 @@
 import React from "react";
-import "./index.scss";
 import { Container } from "semantic-ui-react";
+
+import "./index.scss";
 
 function App() {
   return (
