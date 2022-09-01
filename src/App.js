@@ -1,11 +1,13 @@
 import React from "react";
+import { Container } from "semantic-ui-react";
+
 import "./index.scss";
 
 function App() {
   return (
-    <div className="App">
+    <Container>
       <p>Hello Oleg</p>
-    </div>
+    </Container>
   );
 }
 
