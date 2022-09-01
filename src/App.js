@@ -1,6 +1,9 @@
+import React from "react";
+import "./index.scss";
+
 function App() {
   return (
-    <div>
+    <div className="App">
       <p>Hello Oleg</p>
     </div>
   );
