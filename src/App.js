@@ -1,14 +1,10 @@
 import React from "react";
-import { Container } from "semantic-ui-react";
+import {} from "semantic-ui-react";
 
-import "./index.scss";
+import Wrapper from "./components/Wrapper";
 
 function App() {
-  return (
-    <Container>
-      <p>Hello Oleg</p>
-    </Container>
-  );
+  return <Wrapper />;
 }
 
 export default App;
