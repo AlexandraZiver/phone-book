@@ -1,11 +1,12 @@
 $color-primary: #696969;
 $color-secondary: rgba(136, 156, 209, 0.859);
 $color-support: #fff;
-
+$color-dark: #212020c0;
 $theme-colors: (
   primary: $color-primary,
   secondary: $color-secondary,
   support: $color-support,
+  dark: $color-dark,
 );
 
 @function theme-color($key) {

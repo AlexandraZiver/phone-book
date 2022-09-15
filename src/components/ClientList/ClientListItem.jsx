@@ -6,7 +6,7 @@ import styles from "./ClientListItem.module.scss";
 
 const ClientListItem = ({ client }) => {
   const handleClick = () => {
-    alert("Вы хотите просмотреть клиента?");
+    alert("Do you want to see the client?");
   };
 
   return (

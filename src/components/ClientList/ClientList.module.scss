@@ -1,4 +1,5 @@
 @import "../../styles/theme";
+@import "../../styles/mixins/scroll.scss";
 
 .Сontainer {
   background-color: theme-color(primary);
@@ -6,20 +7,5 @@
   display: flex;
   flex-direction: column;
   gap: 0.3em;
-  height: 100vh;
-  overflow-y: scroll;
-
-  &::-webkit-scrollbar {
-    width: 0.7em;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: theme-color(primary); /* цвет зоны отслеживания */
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: theme-color(primary);
-    border-radius: 20px;
-    border: 1px solid theme-color(secondary);
-  }
+  @include scroll;
 }

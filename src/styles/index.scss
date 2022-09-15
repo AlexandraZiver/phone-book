@@ -1,4 +1,5 @@
 @import "./theme.scss";
+
 body {
   background-color: theme-color(secondary);
   color: theme-color(support);
@@ -7,4 +8,8 @@ body {
 
 .ui.grid > .column:last-of-type {
   padding-bottom: 0;
+}
+
+.ui.list:last-child {
+  padding: 0.3em 0px 0.3em 0.7em;
 }

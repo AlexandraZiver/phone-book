@@ -1,0 +1,4 @@
+@mixin stringHidden() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

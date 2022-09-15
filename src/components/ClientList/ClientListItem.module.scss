@@ -1,9 +1,5 @@
 @import "../../styles/theme";
-
-@mixin stringHidden() {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+@import "../../styles/mixins/truncate.scss";
 
 .Job {
   @include stringHidden;
@@ -16,7 +12,7 @@
   gap: 0.3em;
   padding: 0.5em;
   white-space: nowrap;
-  background: #212020c0;
+  background: theme-color(dark);
   border-radius: 0.5em;
   &:hover {
     border-right: none;
@@ -27,8 +23,8 @@
 
 .Content {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   @include stringHidden;
 }
 
