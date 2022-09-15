@@ -1,0 +1,35 @@
+@import "../../styles/theme";
+@import "../../styles/mixins/truncate.scss";
+
+.Job {
+  @include stringHidden;
+  font-size: 12px;
+}
+
+.Container {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3em;
+  padding: 0.5em;
+  white-space: nowrap;
+  background: theme-color(dark);
+  border-radius: 0.5em;
+  &:hover {
+    border-right: none;
+    background-color: theme-color(secondary);
+    color: theme-color(support);
+  }
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include stringHidden;
+}
+
+.Avatar {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+}

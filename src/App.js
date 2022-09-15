@@ -1,13 +1,15 @@
 import React from "react";
-import { Container } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 
-import "./index.scss";
+import ClientList from "./components/ClientList";
 
 function App() {
   return (
-    <Container>
-      <p>Hello Oleg</p>
-    </Container>
+    <Grid columns={2}>
+      <Grid.Column width={6}>
+        <ClientList />
+      </Grid.Column>
+    </Grid>
   );
 }
 
