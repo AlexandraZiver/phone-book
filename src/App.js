@@ -1,10 +1,16 @@
 import React from "react";
-import {} from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 
-import Wrapper from "./components/Wrapper";
+import ClientList from "./components/ClientList";
 
 function App() {
-  return <Wrapper />;
+  return (
+    <Grid columns={2}>
+      <Grid.Column width={6}>
+        <ClientList />
+      </Grid.Column>
+    </Grid>
+  );
 }
 
 export default App;

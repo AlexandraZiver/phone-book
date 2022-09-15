@@ -19,6 +19,7 @@ const ClientListItem = ({ client }) => {
     </List.Content>
   );
 };
+
 ClientListItem.propTypes = {
   client: PropTypes.shape({
     general: PropTypes.shape({
@@ -42,4 +43,5 @@ ClientListItem.propTypes = {
     }),
   }).isRequired,
 };
+
 export default ClientListItem;

@@ -1,0 +1,10 @@
+@import "./theme.scss";
+body {
+  background-color: theme-color(secondary);
+  color: theme-color(support);
+  font-size: 14px;
+}
+
+.ui.grid > .column:last-of-type {
+  padding-bottom: 0;
+}

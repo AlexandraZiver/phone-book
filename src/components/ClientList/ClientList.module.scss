@@ -1,5 +1,25 @@
+@import "../../styles/theme";
+
 .Сontainer {
-  width: 30%;
-  background: #696969;
-  font-size: 16px;
+  background-color: theme-color(primary);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  height: 100vh;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0.7em;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: theme-color(primary); /* цвет зоны отслеживания */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: theme-color(primary);
+    border-radius: 20px;
+    border: 1px solid theme-color(secondary);
+  }
 }

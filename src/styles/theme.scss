@@ -1,0 +1,13 @@
+$color-primary: #696969;
+$color-secondary: rgba(136, 156, 209, 0.859);
+$color-support: #fff;
+
+$theme-colors: (
+  primary: $color-primary,
+  secondary: $color-secondary,
+  support: $color-support,
+);
+
+@function theme-color($key) {
+  @return map-get($theme-colors, $key);
+}
