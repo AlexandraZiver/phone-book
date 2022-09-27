@@ -1,0 +1,13 @@
+@import "../../styles/theme";
+@import "../../styles/mixins/background.scss";
+@import "../../styles/mixins/align_center.scss";
+@import "../../styles/mixins/text.scss";
+
+.Container {
+  @include background();
+  @include align();
+}
+
+.Text {
+  @include text();
+}

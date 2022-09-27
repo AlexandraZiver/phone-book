@@ -1,0 +1,9 @@
+@mixin background($gradient: false) {
+  @if $gradient {
+    background-image: linear-gradient(theme-color(dark), theme-color(dark)),
+      url("../../images/photo_2022-09-27 14.30.48.jpeg");
+  } @else {
+    background-image: url("../../images/photo_2022-09-27 14.30.48.jpeg");
+  }
+  background-size: cover;
+}

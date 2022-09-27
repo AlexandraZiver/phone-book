@@ -5,12 +5,8 @@ import { Image, List } from "semantic-ui-react";
 import styles from "./ClientListItem.module.scss";
 
 const ClientListItem = ({ client }) => {
-  const handleClick = () => {
-    alert("Do you want to see the client?");
-  };
-
   return (
-    <List.Content className={styles.Container} onClick={handleClick}>
+    <List.Content className={styles.Container}>
       <Image circular src={client.general.avatar} className={styles.Avatar} />
       <div className={styles.Content}>
         {client.general.firstName} {client.general.lastName}

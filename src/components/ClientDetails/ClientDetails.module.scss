@@ -1,0 +1,63 @@
+@import "../../styles/theme";
+@import "../../styles/mixins/background.scss";
+
+@mixin column {
+  display: flex;
+  flex-direction: column;
+}
+
+.WrapperClientDetails {
+  height: 100%;
+  @include background($gradient: true);
+  box-sizing: border-box;
+  padding: 1em;
+}
+
+.Name {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.Image {
+  width: 150px;
+  height: 150px;
+  margin: 1em 1em 1em 0;
+  flex-shrink: 0;
+}
+
+.InfoClient {
+  display: flex;
+  align-items: center;
+}
+
+.Job {
+  padding: 1em;
+  background-color: theme-color(secondary);
+  margin: 1em;
+  border-radius: 0.5em;
+}
+
+.Info {
+  @include column;
+  gap: 0.5em;
+}
+
+.Icon {
+  color: theme-color(secondary);
+}
+
+.Address {
+  @include column;
+}
+
+.BtnReturn {
+  border: 1px solid theme-color(secondary);
+  border-radius: 0.5em;
+  padding: 0.5em;
+  background-color: theme-color(secondary);
+  margin: 1em 1em 1em 0;
+}
+
+.BtnReturn:hover {
+  background-color: theme-color(primary);
+}

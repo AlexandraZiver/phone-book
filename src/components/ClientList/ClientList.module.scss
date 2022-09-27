@@ -8,4 +8,5 @@
   flex-direction: column;
   gap: 0.3em;
   @include scroll;
+  box-sizing: border-box;
 }
