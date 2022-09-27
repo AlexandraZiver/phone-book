@@ -1,0 +1,8 @@
+@import "../theme.scss";
+
+@mixin text {
+  border-radius: 0.5em;
+  padding: 1em;
+  background-color: theme-color(dark);
+  font-size: 20px;
+}

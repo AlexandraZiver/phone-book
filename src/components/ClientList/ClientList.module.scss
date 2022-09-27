@@ -9,9 +9,12 @@
   gap: 0.3em;
   @include scroll;
   box-sizing: border-box;
+<<<<<<< HEAD
 }
 
 .Container::content {
   background-color: theme-color(gray);
   color: theme-color(gray);
+=======
+>>>>>>> 3233376 (feature/clients-details)
 }

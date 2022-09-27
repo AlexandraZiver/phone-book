@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
+<<<<<<< HEAD
 import { Link, useParams } from "react-router-dom";
+=======
+import { Link } from "react-router-dom";
+>>>>>>> 3233376 (feature/clients-details)
 import { List } from "semantic-ui-react";
 
 import clientData from "../../data/clients.json";
@@ -18,7 +22,11 @@ const ClientList = () => {
     <List className={styles.Сontainer} selection verticalAlign="middle">
       {clients.map((client, index) => (
         <Link to={`/clients/${index}`} key={client.contact.phone}>
+<<<<<<< HEAD
           <ClientListItem client={client} isSelected={index === id} />
+=======
+          <ClientListItem client={client} />
+>>>>>>> 3233376 (feature/clients-details)
         </Link>
       ))}
     </List>

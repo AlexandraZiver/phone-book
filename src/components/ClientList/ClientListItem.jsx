@@ -5,6 +5,7 @@ import { Image, List } from "semantic-ui-react";
 
 import styles from "./ClientListItem.module.scss";
 
+<<<<<<< HEAD
 const ClientListItem = ({ client, isSelected }) => {
   const containerClassName = cx({
     [styles.Container]: true,
@@ -13,6 +14,11 @@ const ClientListItem = ({ client, isSelected }) => {
 
   return (
     <div className={containerClassName}>
+=======
+const ClientListItem = ({ client }) => {
+  return (
+    <List.Content className={styles.Container}>
+>>>>>>> 3233376 (feature/clients-details)
       <Image circular src={client.general.avatar} className={styles.Avatar} />
       <div className={styles.Content}>
         {client.general.firstName} {client.general.lastName}

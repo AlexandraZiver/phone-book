@@ -4,7 +4,11 @@
 body {
   width: 100%;
   height: 100%;
+<<<<<<< HEAD
   @include background();
+=======
+  background-color: theme-color(secondary);
+>>>>>>> 3233376 (feature/clients-details)
   color: theme-color(support);
   font-size: 14px;
 }
@@ -13,15 +17,21 @@ body {
 ol.ui.list,
 ul.ui.list {
   margin: 0;
+<<<<<<< HEAD
   padding-left: 0.7em;
+=======
+>>>>>>> 3233376 (feature/clients-details)
 }
 
 *,
 a {
   color: theme-color(support);
+<<<<<<< HEAD
 }
 
 #root {
   display: grid;
   grid-template-columns: 30% 70%;
+=======
+>>>>>>> 3233376 (feature/clients-details)
 }
