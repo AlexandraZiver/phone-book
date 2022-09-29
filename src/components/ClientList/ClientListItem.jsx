@@ -6,12 +6,16 @@ import { Image, List } from "semantic-ui-react";
 import styles from "./ClientListItem.module.scss";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8700e74 (fix/clients-details)
 const ClientListItem = ({ client, isSelected }) => {
   const containerClassName = cx({
     [styles.Container]: true,
     [styles.ContainerSelected]: isSelected,
   });
 
+<<<<<<< HEAD
   return (
     <div className={containerClassName}>
 =======
@@ -19,6 +23,10 @@ const ClientListItem = ({ client }) => {
   return (
     <List.Content className={styles.Container}>
 >>>>>>> 3233376 (feature/clients-details)
+=======
+  return (
+    <div className={containerClassName}>
+>>>>>>> 8700e74 (fix/clients-details)
       <Image circular src={client.general.avatar} className={styles.Avatar} />
       <div className={styles.Content}>
         {client.general.firstName} {client.general.lastName}

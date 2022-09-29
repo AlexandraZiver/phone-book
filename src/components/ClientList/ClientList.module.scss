@@ -18,3 +18,7 @@
 =======
 >>>>>>> 3233376 (feature/clients-details)
 }
+.Container::content {
+  background-color: theme-color(gray);
+  color: theme-color(gray);
+}

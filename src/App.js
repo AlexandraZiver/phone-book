@@ -1,5 +1,6 @@
 import React from "react";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Route, Routes, Navigate } from "react-router-dom";
 
 import ClientDetails from "./components/ClientDetails/ClientDetails";
@@ -19,24 +20,31 @@ function App() {
     </Routes>
 =======
 import { Route, Routes } from "react-router-dom";
+=======
+import { Route, Routes, Navigate } from "react-router-dom";
+>>>>>>> 8700e74 (fix/clients-details)
 
 import ClientDetails from "./components/ClientDetails/ClientDetails";
-import ClientList from "./components/ClientList";
 import HomePage from "./components/HomePage/HomePage";
 import NotFound from "./components/NotFound/NotFound";
+import Layout from "./pages/Layout";
 
 function App() {
   return (
-    <>
-      <ClientList />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/clients" element={<HomePage />} />
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="/clients" element={<Navigate to="/" />} />
         <Route path="/clients/:id" element={<ClientDetails />} />
         <Route path="*" element={<NotFound />} />
+<<<<<<< HEAD
       </Routes>
     </>
 >>>>>>> 3233376 (feature/clients-details)
+=======
+      </Route>
+    </Routes>
+>>>>>>> 8700e74 (fix/clients-details)
   );
 }
 

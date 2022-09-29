@@ -1,9 +1,14 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 @mixin background() {
   background-image: url("../../images/bg.png");
 =======
 @mixin background($gradient: false) {
   @if $gradient {
+=======
+@mixin background($isGradient: false) {
+  @if $isGradient {
+>>>>>>> 8700e74 (fix/clients-details)
     background-image: linear-gradient(theme-color(dark), theme-color(dark)),
       url("../../images/photo_2022-09-27 14.30.48.jpeg");
   } @else {

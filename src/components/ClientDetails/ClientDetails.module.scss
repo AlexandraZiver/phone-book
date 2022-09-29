@@ -13,6 +13,7 @@
 .WrapperClientDetails {
   height: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-image: linear-gradient(theme-color(dark), theme-color(dark));
   box-sizing: border-box;
   padding: 1em;
@@ -26,14 +27,27 @@
   box-sizing: border-box;
   padding: 1em;
 >>>>>>> 3233376 (feature/clients-details)
+=======
+  @include background($isGradient: true);
+  box-sizing: border-box;
+  padding: 1em;
+  backdrop-filter: blur(10px);
+}
+.Container {
+  @include column;
+  gap: 0.5em;
+>>>>>>> 8700e74 (fix/clients-details)
 }
 
 .Name {
   font-size: 1.5em;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   font-weight: 600;
 >>>>>>> 3233376 (feature/clients-details)
+=======
+>>>>>>> 8700e74 (fix/clients-details)
 }
 
 .Image {
@@ -45,6 +59,7 @@
 
 .InfoClient {
   display: flex;
+<<<<<<< HEAD
 <<<<<<< HEAD
   flex-direction: column;
 }
@@ -60,19 +75,27 @@
   align-items: center;
 =======
   align-items: center;
+=======
+  flex-direction: column;
+>>>>>>> 8700e74 (fix/clients-details)
 }
 
 .Job {
   padding: 1em;
-  background-color: theme-color(secondary);
-  margin: 1em;
-  border-radius: 0.5em;
+  color: theme-color(secondary);
+  padding: 1em 1em 1em 0;
+  text-transform: uppercase;
 }
 
 .Info {
+<<<<<<< HEAD
   @include column;
   gap: 0.5em;
 >>>>>>> 3233376 (feature/clients-details)
+=======
+  display: flex;
+  align-items: center;
+>>>>>>> 8700e74 (fix/clients-details)
 }
 
 .Icon {
@@ -82,6 +105,7 @@
 .Address {
   @include column;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -97,3 +121,5 @@
   background-color: theme-color(primary);
 }
 >>>>>>> 3233376 (feature/clients-details)
+=======
+>>>>>>> 8700e74 (fix/clients-details)

@@ -18,9 +18,13 @@ ol.ui.list,
 ul.ui.list {
   margin: 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
   padding-left: 0.7em;
 =======
 >>>>>>> 3233376 (feature/clients-details)
+=======
+  padding-left: 0.7em;
+>>>>>>> 8700e74 (fix/clients-details)
 }
 
 *,
@@ -34,4 +38,8 @@ a {
   grid-template-columns: 30% 70%;
 =======
 >>>>>>> 3233376 (feature/clients-details)
+}
+#root {
+  display: grid;
+  grid-template-columns: 30% 70%;
 }
