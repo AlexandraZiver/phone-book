@@ -1,5 +1,5 @@
-@mixin background($gradient: false) {
-  @if $gradient {
+@mixin background($isGradient: false) {
+  @if $isGradient {
     background-image: linear-gradient(theme-color(dark), theme-color(dark)),
       url("../../images/photo_2022-09-27 14.30.48.jpeg");
   } @else {

@@ -12,9 +12,14 @@ body {
 ol.ui.list,
 ul.ui.list {
   margin: 0;
+  padding-left: 0.7em;
 }
 
 *,
 a {
   color: theme-color(support);
+}
+#root {
+  display: grid;
+  grid-template-columns: 30% 70%;
 }

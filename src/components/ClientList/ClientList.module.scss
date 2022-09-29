@@ -10,3 +10,7 @@
   @include scroll;
   box-sizing: border-box;
 }
+.Container::content {
+  background-color: theme-color(gray);
+  color: theme-color(gray);
+}

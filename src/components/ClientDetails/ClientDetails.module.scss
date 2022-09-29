@@ -8,14 +8,18 @@
 
 .WrapperClientDetails {
   height: 100%;
-  @include background($gradient: true);
+  @include background($isGradient: true);
   box-sizing: border-box;
   padding: 1em;
+  backdrop-filter: blur(10px);
+}
+.Container {
+  @include column;
+  gap: 0.5em;
 }
 
 .Name {
   font-size: 1.5em;
-  font-weight: 600;
 }
 
 .Image {
@@ -27,19 +31,19 @@
 
 .InfoClient {
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
 
 .Job {
   padding: 1em;
-  background-color: theme-color(secondary);
-  margin: 1em;
-  border-radius: 0.5em;
+  color: theme-color(secondary);
+  padding: 1em 1em 1em 0;
+  text-transform: uppercase;
 }
 
 .Info {
-  @include column;
-  gap: 0.5em;
+  display: flex;
+  align-items: center;
 }
 
 .Icon {
@@ -48,16 +52,4 @@
 
 .Address {
   @include column;
-}
-
-.BtnReturn {
-  border: 1px solid theme-color(secondary);
-  border-radius: 0.5em;
-  padding: 0.5em;
-  background-color: theme-color(secondary);
-  margin: 1em 1em 1em 0;
-}
-
-.BtnReturn:hover {
-  background-color: theme-color(primary);
 }
