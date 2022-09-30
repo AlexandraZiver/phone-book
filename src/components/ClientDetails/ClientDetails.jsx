@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { Image, List } from "semantic-ui-react";
 
 import db from "../../data/clients.json";
-import NotFound from "../NotFound/NotFound";
+import NotFound from "../Error/NotFound";
 import style from "./ClientDetails.module.scss";
 
 const ClientDetails = () => {
