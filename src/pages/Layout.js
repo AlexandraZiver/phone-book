@@ -4,7 +4,7 @@ import ClientList from "../components/ClientList/ClientList";
 
 const Layout = () => (
   <>
-    <Link to="/">
+    <Link to="/clients">
       <ClientList />
     </Link>
     <Outlet />

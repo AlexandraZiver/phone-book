@@ -1,9 +1,12 @@
 @import "../../styles/theme";
 <<<<<<< HEAD
+<<<<<<< HEAD
 @import "../../styles/mixins/header.scss";
 =======
 @import "../../styles/mixins/background.scss";
 >>>>>>> 3233376 (feature/clients-details)
+=======
+>>>>>>> a73c268 (fix/clients-details)
 
 @mixin column {
   display: flex;
@@ -12,6 +15,7 @@
 
 .WrapperClientDetails {
   height: 100%;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   background-image: linear-gradient(theme-color(dark), theme-color(dark));
@@ -29,6 +33,9 @@
 >>>>>>> 3233376 (feature/clients-details)
 =======
   @include background($isGradient: true);
+=======
+  background-image: linear-gradient(theme-color(dark), theme-color(dark));
+>>>>>>> a73c268 (fix/clients-details)
   box-sizing: border-box;
   padding: 1em;
   backdrop-filter: blur(10px);

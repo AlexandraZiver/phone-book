@@ -5,10 +5,14 @@ body {
   width: 100%;
   height: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
   @include background();
 =======
   background-color: theme-color(secondary);
 >>>>>>> 3233376 (feature/clients-details)
+=======
+  @include background();
+>>>>>>> a73c268 (fix/clients-details)
   color: theme-color(support);
   font-size: 14px;
 }

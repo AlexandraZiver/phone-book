@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { Image, List } from "semantic-ui-react";
 
 import db from "../../data/clients.json";
+<<<<<<< HEAD
 import Backdrop from "../Backdrop";
 =======
 import { useParams, Link } from "react-router-dom";
@@ -16,6 +17,9 @@ import { Image, List } from "semantic-ui-react";
 import db from "../../data/clients.json";
 import NotFound from "../NotFound/NotFound";
 >>>>>>> 3233376 (feature/clients-details)
+=======
+import NotFound from "../Error/NotFound";
+>>>>>>> a73c268 (fix/clients-details)
 import style from "./ClientDetails.module.scss";
 
 const ClientDetails = () => {

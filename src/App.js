@@ -4,6 +4,7 @@ import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 
 import ClientDetails from "./components/ClientDetails/ClientDetails";
+<<<<<<< HEAD
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
 import NotFound from "./pages/NotFound";
@@ -25,23 +26,31 @@ import { Route, Routes, Navigate } from "react-router-dom";
 >>>>>>> 8700e74 (fix/clients-details)
 
 import ClientDetails from "./components/ClientDetails/ClientDetails";
+=======
+import ErrorPath from "./components/Error/ErrorPath";
+import NotFound from "./components/Error/NotFound";
+>>>>>>> a73c268 (fix/clients-details)
 import HomePage from "./components/HomePage/HomePage";
-import NotFound from "./components/NotFound/NotFound";
 import Layout from "./pages/Layout";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
-        <Route path="/clients" element={<Navigate to="/" />} />
+        <Route path="/clients" element={<HomePage />} />
+        <Route path="/" element={<Navigate to="/clients" />} />
         <Route path="/clients/:id" element={<ClientDetails />} />
+<<<<<<< HEAD
         <Route path="*" element={<NotFound />} />
 <<<<<<< HEAD
       </Routes>
     </>
 >>>>>>> 3233376 (feature/clients-details)
 =======
+=======
+        <Route path="*" element={<ErrorPath />} />
+        <Route path="/clients/*" element={<NotFound />} />
+>>>>>>> a73c268 (fix/clients-details)
       </Route>
     </Routes>
 >>>>>>> 8700e74 (fix/clients-details)
