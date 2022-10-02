@@ -1,0 +1,7 @@
+@import "../../styles/mixins/header.scss";
+
+.Container {
+  text-align: center;
+  height: 100vh;
+  @include header();
+}

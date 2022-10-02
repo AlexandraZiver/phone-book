@@ -3,14 +3,19 @@ import { useParams } from "react-router-dom";
 import { Image, List } from "semantic-ui-react";
 
 import db from "../../data/clients.json";
-import NotFound from "../Error/NotFound";
+import Backdrop from "../Backdrop";
 import style from "./ClientDetails.module.scss";
 
 const ClientDetails = () => {
   const { id } = useParams();
   let userInfo = db[id];
+
   if (!userInfo) {
-    return <NotFound />;
+    return (
+      <Backdrop>
+        <p>404 Page is not found</p>
+      </Backdrop>
+    );
   }
 
   return (

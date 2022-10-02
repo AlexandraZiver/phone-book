@@ -22,6 +22,10 @@ const ClientListItem = ({ client, isSelected }) => {
   );
 };
 
+ClientListItem.defaultProps = {
+  isSelected: false,
+};
+
 ClientListItem.propTypes = {
   isSelected: PropTypes.bool,
   client: PropTypes.shape({

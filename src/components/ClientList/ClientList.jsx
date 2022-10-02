@@ -9,6 +9,7 @@ import ClientListItem from "./ClientListItem";
 const ClientList = () => {
   const [clients, setClients] = useState([]);
   const { id } = useParams();
+
   useEffect(() => {
     setClients(clientData);
   }, []);
@@ -17,7 +18,7 @@ const ClientList = () => {
     <List className={styles.Сontainer} selection verticalAlign="middle">
       {clients.map((client, index) => (
         <Link to={`/clients/${index}`} key={client.contact.phone}>
-          <ClientListItem client={client} isSelected={index == id} />
+          <ClientListItem client={client} isSelected={index === id} />
         </Link>
       ))}
     </List>

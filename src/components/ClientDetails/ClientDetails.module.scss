@@ -1,4 +1,5 @@
 @import "../../styles/theme";
+@import "../../styles/mixins/header.scss";
 
 @mixin column {
   display: flex;
@@ -34,7 +35,6 @@
 }
 
 .Job {
-  padding: 1em;
   color: theme-color(secondary);
   padding: 1em 1em 1em 0;
   text-transform: uppercase;
