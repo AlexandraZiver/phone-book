@@ -6,6 +6,7 @@ import { Image, List } from "semantic-ui-react";
 
 import db from "../../data/clients.json";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Backdrop from "../Backdrop";
 =======
 import { useParams, Link } from "react-router-dom";
@@ -20,6 +21,9 @@ import NotFound from "../NotFound/NotFound";
 =======
 import NotFound from "../Error/NotFound";
 >>>>>>> a73c268 (fix/clients-details)
+=======
+import Backdrop from "../Backdrop";
+>>>>>>> fe3fb2f (fix comments/clients details)
 import style from "./ClientDetails.module.scss";
 
 const ClientDetails = () => {
@@ -49,8 +53,13 @@ const ClientDetails = () => {
         </List.Content>
 =======
   let userInfo = db[id];
+
   if (!userInfo) {
-    return <NotFound />;
+    return (
+      <Backdrop>
+        <p>404 Page is not found</p>
+      </Backdrop>
+    );
   }
 
   return (

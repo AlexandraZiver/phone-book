@@ -1,12 +1,16 @@
 @import "../../styles/theme";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @import "../../styles/mixins/header.scss";
 =======
 @import "../../styles/mixins/background.scss";
 >>>>>>> 3233376 (feature/clients-details)
 =======
 >>>>>>> a73c268 (fix/clients-details)
+=======
+@import "../../styles/mixins/header.scss";
+>>>>>>> fe3fb2f (fix comments/clients details)
 
 @mixin column {
   display: flex;
@@ -88,7 +92,6 @@
 }
 
 .Job {
-  padding: 1em;
   color: theme-color(secondary);
   padding: 1em 1em 1em 0;
   text-transform: uppercase;

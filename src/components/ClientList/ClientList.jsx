@@ -18,9 +18,13 @@ const ClientList = () => {
   const [clients, setClients] = useState([]);
   const { id } = useParams();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 8700e74 (fix/clients-details)
+=======
+
+>>>>>>> fe3fb2f (fix comments/clients details)
   useEffect(() => {
     setClients(clientData);
   }, []);
@@ -31,6 +35,7 @@ const ClientList = () => {
         <Link to={`/clients/${index}`} key={client.contact.phone}>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           <ClientListItem client={client} isSelected={index === id} />
 =======
           <ClientListItem client={client} />
@@ -38,6 +43,9 @@ const ClientList = () => {
 =======
           <ClientListItem client={client} isSelected={index == id} />
 >>>>>>> 8700e74 (fix/clients-details)
+=======
+          <ClientListItem client={client} isSelected={index === id} />
+>>>>>>> fe3fb2f (fix comments/clients details)
         </Link>
       ))}
     </List>
