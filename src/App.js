@@ -6,6 +6,7 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import ClientDetails from "./components/ClientDetails/ClientDetails";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
 import NotFound from "./pages/NotFound";
@@ -34,9 +35,12 @@ import NotFound from "./components/Error/NotFound";
 import HomePage from "./components/HomePage/HomePage";
 =======
 import ErrorPath from "./pages/ErrorPath";
+=======
+>>>>>>> 61b310a (fix comments/clients details)
 import Home from "./pages/Home";
 >>>>>>> fe3fb2f (fix comments/clients details)
 import Layout from "./pages/Layout";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -45,6 +49,7 @@ function App() {
         <Route exact path="/" element={<Navigate to="/clients" />} />
         <Route path="/clients" element={<Home />} />
         <Route path="/clients/:id" element={<ClientDetails />} />
+<<<<<<< HEAD
 <<<<<<< HEAD
         <Route path="*" element={<NotFound />} />
 <<<<<<< HEAD
@@ -59,6 +64,9 @@ function App() {
 >>>>>>> a73c268 (fix/clients-details)
 =======
 >>>>>>> fe3fb2f (fix comments/clients details)
+=======
+        <Route path="*" element={<NotFound />} />
+>>>>>>> 61b310a (fix comments/clients details)
       </Route>
     </Routes>
 >>>>>>> 8700e74 (fix/clients-details)

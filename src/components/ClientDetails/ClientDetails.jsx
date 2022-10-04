@@ -29,6 +29,7 @@ import style from "./ClientDetails.module.scss";
 const ClientDetails = () => {
   const { id } = useParams();
 <<<<<<< HEAD
+<<<<<<< HEAD
   const userInfo = db[id];
 
   if (!userInfo) {
@@ -53,11 +54,14 @@ const ClientDetails = () => {
         </List.Content>
 =======
   let userInfo = db[id];
+=======
+  const userInfo = db[id];
+>>>>>>> 61b310a (fix comments/clients details)
 
   if (!userInfo) {
     return (
       <Backdrop>
-        <p>404 Page is not found</p>
+        <p>Sorry, the client is not found</p>
       </Backdrop>
     );
   }
@@ -74,8 +78,11 @@ const ClientDetails = () => {
             <div className={style.Job}>{userInfo.job.title}</div>
           </List.Content>
         </List.Content>
+<<<<<<< HEAD
 
 >>>>>>> 3233376 (feature/clients-details)
+=======
+>>>>>>> 61b310a (fix comments/clients details)
         <List.Item>
           <List.Icon className={style.Icon} name="users" />
           <List.Content>{userInfo.job.company}</List.Content>
