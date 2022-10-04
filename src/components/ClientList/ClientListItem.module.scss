@@ -25,7 +25,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-decoration: none;
+  color: theme-color(support);
   @include stringHidden;
+}
+
+.ContainerSelected {
+  background: theme-color(primary);
 }
 
 .Avatar {

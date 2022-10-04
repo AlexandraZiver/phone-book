@@ -1,0 +1,7 @@
+@import "../theme.scss";
+
+@mixin header {
+  padding: 1em;
+  background-color: theme-color(dark);
+  font-size: 20px;
+}

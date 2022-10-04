@@ -8,4 +8,10 @@
   flex-direction: column;
   gap: 0.3em;
   @include scroll;
+  box-sizing: border-box;
+}
+
+.Container::content {
+  background-color: theme-color(gray);
+  color: theme-color(gray);
 }
