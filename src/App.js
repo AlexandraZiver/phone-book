@@ -2,9 +2,9 @@ import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 
 import ClientDetails from "./components/ClientDetails/ClientDetails";
-import ErrorPath from "./pages/ErrorPath";
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Route exact path="/" element={<Navigate to="/clients" />} />
         <Route path="/clients" element={<Home />} />
         <Route path="/clients/:id" element={<ClientDetails />} />
-        <Route path="*" element={<ErrorPath />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

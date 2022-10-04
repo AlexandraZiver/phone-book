@@ -2,10 +2,10 @@ import React from "react";
 
 import Backdrop from "../components/Backdrop/Backdrop";
 
-const ErrorPath = () => (
+const NotFound = () => (
   <Backdrop>
-    <p>Error! The path is not found</p>
+    <p>404 Page is not found</p>
   </Backdrop>
 );
 
-export default ErrorPath;
+export default NotFound;

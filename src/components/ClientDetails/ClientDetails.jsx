@@ -8,12 +8,12 @@ import style from "./ClientDetails.module.scss";
 
 const ClientDetails = () => {
   const { id } = useParams();
-  let userInfo = db[id];
+  const userInfo = db[id];
 
   if (!userInfo) {
     return (
       <Backdrop>
-        <p>404 Page is not found</p>
+        <p>Sorry, the client is not found</p>
       </Backdrop>
     );
   }
@@ -30,7 +30,6 @@ const ClientDetails = () => {
             <div className={style.Job}>{userInfo.job.title}</div>
           </List.Content>
         </List.Content>
-
         <List.Item>
           <List.Icon className={style.Icon} name="users" />
           <List.Content>{userInfo.job.company}</List.Content>
