@@ -1,8 +1,9 @@
 import cx from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
-import { Image, List } from "semantic-ui-react";
+import { List } from "semantic-ui-react";
 
+import Avatar from "../Avatar/index";
 import styles from "./ClientListItem.module.scss";
 
 const ClientListItem = ({ client, isSelected }) => {
@@ -10,10 +11,9 @@ const ClientListItem = ({ client, isSelected }) => {
     [styles.Container]: true,
     [styles.ContainerSelected]: isSelected,
   });
-
   return (
     <div className={containerClassName}>
-      <Image circular src={client.general.avatar} className={styles.Avatar} />
+      <Avatar client={client} />
       <div className={styles.Content}>
         {client.general.firstName} {client.general.lastName}
         <List.Content className={styles.Job}>{client.job.title}</List.Content>
