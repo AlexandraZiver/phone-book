@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import { List } from "semantic-ui-react";
 
 import db from "../../data/clients.json";
-import Avatar from "../Avatar/index";
 import Backdrop from "../Backdrop";
+import Avatar from "../Icon/index";
 import style from "./ClientDetails.module.scss";
 
 const ClientDetails = () => {
@@ -23,7 +23,7 @@ const ClientDetails = () => {
     <div className={style.WrapperClientDetails}>
       <List className={style.Container}>
         <List.Content className={style.Info}>
-          <Avatar client={userInfo} BigImage={true} />
+          <Avatar client={userInfo} size="large" />
           <List.Content className={style.InfoClient}>
             <div className={style.Name}>
               {userInfo.general.firstName} {userInfo.general.lastName}
