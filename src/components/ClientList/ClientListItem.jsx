@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { List } from "semantic-ui-react";
 
-import Avatar from "../Icon/index";
+import Avatar from "../Icon/Avatar";
 import styles from "./ClientListItem.module.scss";
 
 const ClientListItem = ({ client, isSelected }) => {
@@ -11,9 +11,15 @@ const ClientListItem = ({ client, isSelected }) => {
     [styles.Container]: true,
     [styles.ContainerSelected]: isSelected,
   });
+
   return (
     <div className={containerClassName}>
-      <Avatar client={client} size="small" />
+      <Avatar
+        avatar={client.general.avatar}
+        firstName={client.general.firstName}
+        lastName={client.general.lastName}
+        size="small"
+      />
       <div className={styles.Content}>
         {client.general.firstName} {client.general.lastName}
         <List.Content className={styles.Job}>{client.job.title}</List.Content>
@@ -27,7 +33,6 @@ ClientListItem.defaultProps = {
 };
 
 ClientListItem.propTypes = {
-  id: PropTypes.number,
   isSelected: PropTypes.bool,
   client: PropTypes.shape({
     general: PropTypes.shape({
