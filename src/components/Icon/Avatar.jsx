@@ -14,6 +14,7 @@ const Avatar = ({ lastName, firstName, avatar, size, fallbackBackgroundColor }) 
     const checkIsAvatarValid = async () => {
       setIsAvatarValid(await checkImageUrl(avatar));
     };
+
     checkIsAvatarValid();
   }, [avatar]);
 
@@ -31,12 +32,13 @@ const Avatar = ({ lastName, firstName, avatar, size, fallbackBackgroundColor }) 
 };
 
 Avatar.defaultProps = {
-  size: "styles.Small",
+  size: "small",
   fallbackBackgroundColor: "rgba(136, 156, 209, 0.859)",
 };
+
 Avatar.propTypes = {
   fallbackBackgroundColor: PropTypes.string,
-  size: PropTypes.string,
+  size: PropTypes.oneOf(["small", "large"]),
   BigImage: PropTypes.bool,
   firstName: PropTypes.string,
   lastName: PropTypes.string,

@@ -4,7 +4,7 @@ import { List } from "semantic-ui-react";
 
 import db from "../../data/clients.json";
 import Backdrop from "../Backdrop";
-import Avatar from "../Icon/Avatar";
+import { Avatar } from "../Icon";
 import style from "./ClientDetails.module.scss";
 
 const ClientDetails = () => {

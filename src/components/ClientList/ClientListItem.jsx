@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { List } from "semantic-ui-react";
 
-import Avatar from "../Icon/Avatar";
+import { Avatar } from "../Icon";
 import styles from "./ClientListItem.module.scss";
 
 const ClientListItem = ({ client, isSelected }) => {

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 
 const Abbreviation = ({ firstName, lastName }) => {
-  const firstNameAbbreviation = firstName.charAt(0);
+  const firstNameAbbreviation = firstName?.charAt(0);
   const lastNameAbbreviation = lastName?.charAt(0);
 
   const abbreviation = useMemo(
