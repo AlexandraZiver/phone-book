@@ -3,7 +3,7 @@
     "general": {
       "firstName": "Liana",
       "lastName": "Crooks",
-      "avatar": "https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9"
+      "avatar": ""
     },
     "job": {
       "company": "Ledner, Johnson and Predovic",
@@ -24,7 +24,7 @@
     "general": {
       "firstName": "Deontae",
       "lastName": "Dare",
-      "avatar": "https://randomuser.me/api/portraits/men/86.jpg"
+      "avatar": ""
     },
     "job": {
       "company": "D'Amore, Dicki and Borer",
@@ -44,8 +44,8 @@
   {
     "general": {
       "firstName": "Cortez",
-      "lastName": "Pacocha",
-      "avatar": "https://api.uifaces.co/our-content/donated/xZ4wg2Xj.jpg"
+      "lastName": "",
+      "avatar": ""
     },
     "job": {
       "company": "McKenzie Group",
@@ -66,7 +66,7 @@
     "general": {
       "firstName": "Geoffrey",
       "lastName": "Russel",
-      "avatar": "https://randomuser.me/api/portraits/men/97.jpg"
+      "avatar": "https://randomuser.me/api/portraits/men/9656ybdfgf7.jpg"
     },
     "job": {
       "company": "Nienow and Sons",

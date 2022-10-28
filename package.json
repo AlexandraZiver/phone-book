@@ -18,8 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix",
-    "configure-husky": "npx husky install && npx husky add .husky/pre-commit \"npx --no-install lint-staged\""
+    "lint:fix": "eslint --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -40,11 +39,11 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.23.0",
+    "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.31.1",
+    "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
@@ -58,8 +57,8 @@
   },
   "lint-staged": {
     "*.{js,jsx}": [
-      "prettier --write",
       "eslint --fix",
+      "prettier --write",
       "git add"
     ],
     "*.{html,css,less,scss,ejs}": [

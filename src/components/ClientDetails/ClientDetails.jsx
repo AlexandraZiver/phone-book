@@ -1,9 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { Image, List } from "semantic-ui-react";
+import { List } from "semantic-ui-react";
 
 import db from "../../data/clients.json";
 import Backdrop from "../Backdrop";
+import { Avatar } from "../Icon";
 import style from "./ClientDetails.module.scss";
 
 const ClientDetails = () => {
@@ -22,7 +23,12 @@ const ClientDetails = () => {
     <div className={style.WrapperClientDetails}>
       <List className={style.Container}>
         <List.Content className={style.Info}>
-          <Image className={style.Image} src={userInfo.general.avatar} circular />
+          <Avatar
+            avatar={userInfo.general.avatar}
+            firstName={userInfo.general.firstName}
+            lastName={userInfo.general.lastName}
+            size="large"
+          />
           <List.Content className={style.InfoClient}>
             <div className={style.Name}>
               {userInfo.general.firstName} {userInfo.general.lastName}
