@@ -1,3 +1,3 @@
-import { getAll, getById } from "./getClients";
+import ClientService from "./client";
 
-export { getAll, getById };
+export default ClientService;

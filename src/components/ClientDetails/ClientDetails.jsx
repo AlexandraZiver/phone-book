@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { List } from "semantic-ui-react";
 
-import { getById } from "../../services";
+import ClientService from "../../services";
 import Backdrop from "../Backdrop";
 import { Avatar } from "../Icon";
 import style from "./ClientDetails.module.scss";
@@ -14,7 +14,7 @@ const ClientDetails = () => {
 
   useEffect(() => {
     (async () => {
-      const client = await getById(id);
+      const client = await ClientService.getById(id);
       setClient(client);
     })();
   }, [id]);
@@ -32,7 +32,7 @@ const ClientDetails = () => {
       <List className={style.Container}>
         <List.Content className={style.Info}>
           <Avatar
-            avatar={client.general?.avatar}
+            avatar={client.general.avatar}
             firstName={client.general?.firstName}
             lastName={client.general?.lastName}
             size="large"

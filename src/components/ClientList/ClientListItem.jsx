@@ -8,16 +8,12 @@ import { Avatar } from "../Icon";
 import styles from "./ClientListItem.module.scss";
 
 const ClientListItem = ({ client }) => {
-  const idFromLink = useParams();
+  const { id } = useParams();
 
   const containerClassName = cx({
     [styles.Container]: true,
-    [styles.ContainerSelected]: idFromLink.id == client.id,
+    [styles.ContainerSelected]: id == client.id,
   });
-
-  if (!client) {
-    return null;
-  }
 
   return (
     <div className={containerClassName}>
