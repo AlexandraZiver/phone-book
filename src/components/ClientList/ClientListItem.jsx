@@ -7,13 +7,17 @@ import { List } from "semantic-ui-react";
 import { Avatar } from "../Icon";
 import styles from "./ClientListItem.module.scss";
 
-const ClientListItem = ({ client, id }) => {
+const ClientListItem = ({ client }) => {
   const idFromLink = useParams();
 
   const containerClassName = cx({
     [styles.Container]: true,
-    [styles.ContainerSelected]: idFromLink.id == id,
+    [styles.ContainerSelected]: idFromLink.id == client.id,
   });
+
+  if (!client) {
+    return null;
+  }
 
   return (
     <div className={containerClassName}>
@@ -32,7 +36,6 @@ const ClientListItem = ({ client, id }) => {
 };
 
 ClientListItem.propTypes = {
-  id: PropTypes.number,
   client: PropTypes.shape({
     general: PropTypes.shape({
       firstName: PropTypes.string,
