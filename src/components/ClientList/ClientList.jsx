@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { List } from "semantic-ui-react";
 
-import ClientService from "../../services";
+import { ClientService } from "../../services";
 import styles from "./ClientList.module.scss";
 import ClientListItem from "./ClientListItem";
 

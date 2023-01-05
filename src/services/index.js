@@ -1,3 +1,1 @@
-import ClientService from "./client";
-
-export default ClientService;
+export { default as ClientService } from "./client";
