@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { List } from "semantic-ui-react";
 
-import db from "../../data/clients.json";
+import { ClientService } from "../../services";
 import Backdrop from "../Backdrop";
 import { Avatar } from "../Icon";
 import style from "./ClientDetails.module.scss";
 
 const ClientDetails = () => {
   const { id } = useParams();
-  const userInfo = db[id];
 
-  if (!userInfo) {
+  const [client, setClient] = useState();
+
+  useEffect(() => {
+    (async function fetchClientById(id) {
+      const clientReceived = await ClientService.getById(id);
+      setClient(clientReceived);
+    })(id);
+  }, [id]);
+
+  if (!client) {
     return (
       <Backdrop>
         <p>Sorry, the client is not found</p>
@@ -24,46 +32,46 @@ const ClientDetails = () => {
       <List className={style.Container}>
         <List.Content className={style.Info}>
           <Avatar
-            avatar={userInfo.general.avatar}
-            firstName={userInfo.general.firstName}
-            lastName={userInfo.general.lastName}
+            avatar={client.general.avatar}
+            firstName={client.general.firstName}
+            lastName={client.general.lastName}
             size="large"
           />
           <List.Content className={style.InfoClient}>
             <div className={style.Name}>
-              {userInfo.general.firstName} {userInfo.general.lastName}
+              {client.general.firstName} {client.general.lastName}
             </div>
-            <div className={style.Job}>{userInfo.job.title}</div>
+            <div className={style.Job}>{client.job.title}</div>
           </List.Content>
         </List.Content>
         <List.Item>
           <List.Icon className={style.Icon} name="users" />
-          <List.Content>{userInfo.job.company}</List.Content>
+          <List.Content>{client.job.company}</List.Content>
         </List.Item>
         <List.Item>
           <List.Icon className={style.Icon} name="mail" />
           <List.Content>
-            <a href={userInfo.contact.email}>{userInfo.contact.email}</a>
+            <a href={client.contact.email}>{client.contact.email}</a>
           </List.Content>
         </List.Item>
         <List.Item>
           <List.Content>
             <List.Icon className={style.Icon} name="phone" />
-            {userInfo.contact.phone}
+            {client.contact.phone}
           </List.Content>
         </List.Item>
         <List.Content>
           <List.Icon className={style.Icon} name="map" />
-          {userInfo.address.zipCode}
+          {client.address.zipCode}
         </List.Content>
         <List.Item>
           <List.Icon className={style.Icon} name="marker" />
-          <List.Content>{userInfo.address.city}</List.Content>
+          <List.Content>{client.address.city}</List.Content>
         </List.Item>
         <List.Content>
           <List.Icon className={style.Icon} name="map marker alternate" />
-          {userInfo.address.country}
-          {userInfo.address.street}
+          {client.address.country}
+          {client.address.street}
         </List.Content>
       </List>
     </div>

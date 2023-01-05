@@ -1,28 +1,29 @@
-import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { List } from "semantic-ui-react";
 
-import clientData from "../../data/clients.json";
+import { ClientService } from "../../services";
 import styles from "./ClientList.module.scss";
 import ClientListItem from "./ClientListItem";
 
 const ClientList = () => {
   const [clients, setClients] = useState([]);
-  const { id } = useParams();
 
   useEffect(() => {
-    setClients(clientData);
+    (async function fetchClients() {
+      const clientsReceived = await ClientService.getAll();
+      setClients(clientsReceived);
+    })();
   }, []);
 
   return (
-    <List className={styles.Сontainer} selection verticalAlign="middle">
-      {clients.map((client, index) => (
-        <Link to={`/clients/${index}`} key={client.contact.phone}>
-          <ClientListItem client={client} isSelected={index === id} />
+    <List className={styles.Container} selection verticalAlign="middle">
+      {clients?.map((client) => (
+        <Link to={`/clients/${client.id}`} key={client.id}>
+          <ClientListItem client={client} />
         </Link>
       ))}
     </List>
   );
 };
-
 export default ClientList;

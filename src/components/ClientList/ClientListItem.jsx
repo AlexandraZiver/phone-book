@@ -1,15 +1,18 @@
 import cx from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
+import { useParams } from "react-router-dom";
 import { List } from "semantic-ui-react";
 
 import { Avatar } from "../Icon";
 import styles from "./ClientListItem.module.scss";
 
-const ClientListItem = ({ client, isSelected }) => {
+const ClientListItem = ({ client }) => {
+  const { id } = useParams();
+
   const containerClassName = cx({
     [styles.Container]: true,
-    [styles.ContainerSelected]: isSelected,
+    [styles.ContainerSelected]: id == client.id,
   });
 
   return (
@@ -28,12 +31,7 @@ const ClientListItem = ({ client, isSelected }) => {
   );
 };
 
-ClientListItem.defaultProps = {
-  isSelected: false,
-};
-
 ClientListItem.propTypes = {
-  isSelected: PropTypes.bool,
   client: PropTypes.shape({
     general: PropTypes.shape({
       firstName: PropTypes.string,
@@ -54,6 +52,7 @@ ClientListItem.propTypes = {
       zipCode: PropTypes.string,
       country: PropTypes.string,
     }),
+    id: PropTypes.number,
   }).isRequired,
 };
 
