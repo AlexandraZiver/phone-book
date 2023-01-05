@@ -10,9 +10,9 @@ const ClientList = () => {
   const [clients, setClients] = useState([]);
 
   useEffect(() => {
-    (async () => {
-      const clients = await ClientService.getAll();
-      setClients(clients);
+    (async function fetchClients() {
+      const clientsReceived = await ClientService.getAll();
+      setClients(clientsReceived);
     })();
   }, []);
 

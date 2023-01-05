@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { List } from "semantic-ui-react";
 
 import { ClientService } from "../../services";
-import { Backdrop } from "../Backdrop";
+import Backdrop from "../Backdrop";
 import { Avatar } from "../Icon";
 import style from "./ClientDetails.module.scss";
 
@@ -13,12 +13,10 @@ const ClientDetails = () => {
   const [client, setClient] = useState();
 
   useEffect(() => {
-    const fetchClientById = async (id) => {
-      const client = await ClientService.getById(id);
-      setClient(client);
-    };
-
-    fetchClientById(id);
+    (async function fetchClientById(id) {
+      const clientReceived = await ClientService.getById(id);
+      setClient(clientReceived);
+    })(id);
   }, [id]);
 
   if (!client) {
