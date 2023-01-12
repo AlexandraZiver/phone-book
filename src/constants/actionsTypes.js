@@ -1,0 +1,3 @@
+const GET_CLIENTS = "GET_ALL_CLIENTS";
+
+export { GET_CLIENTS };

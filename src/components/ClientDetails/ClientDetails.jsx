@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { List } from "semantic-ui-react";
 
-import { ClientService } from "../../services";
 import Backdrop from "../Backdrop";
 import { Avatar } from "../Icon";
 import style from "./ClientDetails.module.scss";
@@ -10,15 +10,7 @@ import style from "./ClientDetails.module.scss";
 const ClientDetails = () => {
   const { id } = useParams();
 
-  const [client, setClient] = useState();
-
-  useEffect(() => {
-    (async function fetchClientById(id) {
-      const clientReceived = await ClientService.getById(id);
-      setClient(clientReceived);
-    })(id);
-  }, [id]);
-
+  const client = useSelector((state) => state.clients.clients[id]);
   if (!client) {
     return (
       <Backdrop>

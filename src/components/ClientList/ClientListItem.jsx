@@ -14,7 +14,6 @@ const ClientListItem = ({ client }) => {
     [styles.Container]: true,
     [styles.ContainerSelected]: id == client.id,
   });
-
   return (
     <div className={containerClassName}>
       <Avatar
