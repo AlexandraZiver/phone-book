@@ -24,8 +24,9 @@ const clientReducer = createSlice({
       state.error = null;
       state.clients = action.payload;
     },
-    [ClientService.getClients.rejected]: (state) => {
-      state.error = "Error";
+    [ClientService.getClients.rejected]: (state, action) => {
+      state.status = "rejected";
+      state.error = action.payload;
     },
   },
 });

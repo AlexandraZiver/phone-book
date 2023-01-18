@@ -11,6 +11,18 @@ const ClientDetails = () => {
   const { id } = useParams();
 
   const client = useSelector((state) => state.clients.clients[id]);
+  const { status, error } = useSelector((state) => state.clients);
+
+  if (status === "loading") {
+    return (
+      <Backdrop>
+        <p>Loading</p>
+      </Backdrop>
+    );
+  }
+  if (status === "rejected") {
+    return <Backdrop>{error}</Backdrop>;
+  }
   if (!client) {
     return (
       <Backdrop>
