@@ -1,24 +1,23 @@
-import { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { List } from "semantic-ui-react";
 
-import { ClientService } from "../../services";
+import ClientService from "../../services/client";
 import styles from "./ClientList.module.scss";
 import ClientListItem from "./ClientListItem";
 
 const ClientList = () => {
-  const [clients, setClients] = useState([]);
+  const dispatch = useDispatch();
+  const clients = useSelector((state) => state.clients.clients);
 
   useEffect(() => {
-    (async function fetchClients() {
-      const clientsReceived = await ClientService.getAll();
-      setClients(clientsReceived);
-    })();
+    dispatch(ClientService.getClients());
   }, []);
 
   return (
     <List className={styles.Container} selection verticalAlign="middle">
-      {clients?.map((client) => (
+      {clients.map((client) => (
         <Link to={`/clients/${client.id}`} key={client.id}>
           <ClientListItem client={client} />
         </Link>
@@ -26,4 +25,5 @@ const ClientList = () => {
     </List>
   );
 };
+
 export default ClientList;
