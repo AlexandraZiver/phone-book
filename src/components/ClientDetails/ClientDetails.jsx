@@ -20,9 +20,11 @@ const ClientDetails = () => {
       </Backdrop>
     );
   }
+
   if (status === "rejected") {
     return <Backdrop>{error}</Backdrop>;
   }
+
   if (!client) {
     return (
       <Backdrop>
