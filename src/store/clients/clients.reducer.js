@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import { ClientService } from "../../api";
 
+const error = "error";
+const loading = "loading";
 const clientsReducer = createSlice({
   name: "clients",
   initialState: {
@@ -14,7 +16,7 @@ const clientsReducer = createSlice({
   reducers: {},
   extraReducers: {
     [ClientService.getClients.pending]: (state) => {
-      state.status = "loading";
+      state.status = loading;
       state.error = null;
     },
     [ClientService.getClients.fulfilled]: (state, action) => {
@@ -23,21 +25,21 @@ const clientsReducer = createSlice({
       state.clients = action.payload;
     },
     [ClientService.getClients.rejected]: (state, action) => {
-      state.status = "error";
+      state.status = error;
 
       state.error = action.payload;
     },
     [ClientService.getClientById.pending]: (state) => {
-      state.statusClientId = "loading";
+      state.statusClientId = loading;
       state.error = null;
     },
     [ClientService.getClientById.fulfilled]: (state, action) => {
-      state.statusClientId = "resolve";
+      state.statusClientId = null;
       state.error = null;
       state.currentClient = action.payload;
     },
     [ClientService.getClientById.rejected]: (state, action) => {
-      state.statusClientId = "error";
+      state.statusClientId = error;
       state.error = action.payload;
     },
   },
