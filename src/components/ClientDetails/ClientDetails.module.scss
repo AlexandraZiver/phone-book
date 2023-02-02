@@ -13,9 +13,11 @@
   padding: 1em;
   backdrop-filter: blur(10px);
 }
+
 .Container {
   @include column;
   gap: 0.5em;
+  
 }
 
 .Name {

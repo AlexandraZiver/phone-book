@@ -1,85 +1,80 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { List } from "semantic-ui-react";
 
-import Backdrop from "../Backdrop";
+import { ClientService } from "../../api";
 import { Avatar } from "../Icon";
+import LoadingAndError from "../LoadingAndError";
 import style from "./ClientDetails.module.scss";
 
 const ClientDetails = () => {
+  const dispatch = useDispatch();
   const { id } = useParams();
 
-  const client = useSelector((state) => state.clients.clients[id]);
-  const { status, error } = useSelector((state) => state.clients);
+  useEffect(() => {
+    dispatch(ClientService.getClientById(id));
+  }, [id]);
 
-  if (status === "loading") {
-    return (
-      <Backdrop>
-        <p>Loading</p>
-      </Backdrop>
-    );
-  }
-
-  if (status === "rejected") {
-    return <Backdrop>{error}</Backdrop>;
-  }
+  const { currentClient: client, error, statusClientId } = useSelector((state) => state.clients);
 
   if (!client) {
     return (
-      <Backdrop>
-        <p>Sorry, the client is not found</p>
-      </Backdrop>
+      <div className={style.WrapperClientDetails}>
+        <LoadingAndError status={statusClientId} error={error} dependence />
+      </div>
     );
   }
 
   return (
     <div className={style.WrapperClientDetails}>
-      <List className={style.Container}>
-        <List.Content className={style.Info}>
-          <Avatar
-            avatar={client.general.avatar}
-            firstName={client.general.firstName}
-            lastName={client.general.lastName}
-            size="large"
-          />
-          <List.Content className={style.InfoClient}>
-            <div className={style.Name}>
-              {client.general.firstName} {client.general.lastName}
-            </div>
-            <div className={style.Job}>{client.job.title}</div>
+      <LoadingAndError status={statusClientId} error={error} dependence>
+        <List className={style.Container}>
+          <List.Content className={style.Info}>
+            <Avatar
+              avatar={client.general.avatar}
+              firstName={client.general.firstName}
+              lastName={client.general.lastName}
+              size="large"
+            />
+            <List.Content className={style.InfoClient}>
+              <div className={style.Name}>
+                {client.general.firstName} {client.general.lastName}
+              </div>
+              <div className={style.Job}>{client.job.title}</div>
+            </List.Content>
           </List.Content>
-        </List.Content>
-        <List.Item>
-          <List.Icon className={style.Icon} name="users" />
-          <List.Content>{client.job.company}</List.Content>
-        </List.Item>
-        <List.Item>
-          <List.Icon className={style.Icon} name="mail" />
+          <List.Item>
+            <List.Icon className={style.Icon} name="users" />
+            <List.Content>{client.job.company}</List.Content>
+          </List.Item>
+          <List.Item>
+            <List.Icon className={style.Icon} name="mail" />
+            <List.Content>
+              <a href={client.contact.email}>{client.contact.email}</a>
+            </List.Content>
+          </List.Item>
+          <List.Item>
+            <List.Content>
+              <List.Icon className={style.Icon} name="phone" />
+              {client.contact.phone}
+            </List.Content>
+          </List.Item>
           <List.Content>
-            <a href={client.contact.email}>{client.contact.email}</a>
+            <List.Icon className={style.Icon} name="map" />
+            {client.address.zipCode}
           </List.Content>
-        </List.Item>
-        <List.Item>
+          <List.Item>
+            <List.Icon className={style.Icon} name="marker" />
+            <List.Content>{client.address.city}</List.Content>
+          </List.Item>
           <List.Content>
-            <List.Icon className={style.Icon} name="phone" />
-            {client.contact.phone}
+            <List.Icon className={style.Icon} name="map marker alternate" />
+            {client.address.country}
+            {client.address.street}
           </List.Content>
-        </List.Item>
-        <List.Content>
-          <List.Icon className={style.Icon} name="map" />
-          {client.address.zipCode}
-        </List.Content>
-        <List.Item>
-          <List.Icon className={style.Icon} name="marker" />
-          <List.Content>{client.address.city}</List.Content>
-        </List.Item>
-        <List.Content>
-          <List.Icon className={style.Icon} name="map marker alternate" />
-          {client.address.country}
-          {client.address.street}
-        </List.Content>
-      </List>
+        </List>
+      </LoadingAndError>
     </div>
   );
 };
