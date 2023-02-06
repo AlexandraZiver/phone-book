@@ -8,13 +8,11 @@ const axiosInstance = axios.create({
 
 class ClientService {
   static async getAll() {
-    const response = await axiosInstance.get();
-    const { data } = response;
+    const { data } = await axiosInstance.get();
     return data;
   }
   static async getById(id) {
-    const response = await axiosInstance.get(id);
-    const { data } = response;
+    const { data } = await axiosInstance.get(id);
     return data;
   }
 }
