@@ -21,4 +21,11 @@
   text-align: center;
 }
 
+.LoadingContainerBig .ui.dimmer {
+  left: auto !important;
+}
+
+.LoadingContainerBig .ui.text.loader {
+  height: 1vh!important;
+}
 

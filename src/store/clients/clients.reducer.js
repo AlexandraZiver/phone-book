@@ -2,44 +2,48 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import { ClientService } from "../../api";
 
-const error = "error";
-const loading = "loading";
+const Status = {
+  INITIAL: null,
+  LOADING: "loading",
+  ERROR: "error",
+};
+
 const clientsReducer = createSlice({
   name: "clients",
   initialState: {
     clients: [],
     currentClient: null,
-    status: null,
-    error: null,
-    statusClientId: null,
+    status: Status.INITIAL,
+    error: Status.INITIAL,
+    statusClientId: Status.INITIAL,
   },
   reducers: {},
   extraReducers: {
     [ClientService.getClients.pending]: (state) => {
-      state.status = loading;
-      state.error = null;
+      state.status = Status.LOADING;
+      state.error = Status.INITIAL;
     },
     [ClientService.getClients.fulfilled]: (state, action) => {
-      state.status = null;
-      state.error = null;
+      state.status = Status.INITIAL;
+      state.error = Status.INITIAL;
       state.clients = action.payload;
     },
     [ClientService.getClients.rejected]: (state, action) => {
-      state.status = error;
+      state.status = Status.ERROR;
 
       state.error = action.payload;
     },
     [ClientService.getClientById.pending]: (state) => {
-      state.statusClientId = loading;
-      state.error = null;
+      state.statusClientId = Status.LOADING;
+      state.error = Status.INITIAL;
     },
     [ClientService.getClientById.fulfilled]: (state, action) => {
-      state.statusClientId = null;
-      state.error = null;
+      state.statusClientId = Status.INITIAL;
+      state.error = Status.INITIAL;
       state.currentClient = action.payload;
     },
     [ClientService.getClientById.rejected]: (state, action) => {
-      state.statusClientId = error;
+      state.statusClientId = Status.ERROR;
       state.error = action.payload;
     },
   },
