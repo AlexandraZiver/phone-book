@@ -25,7 +25,7 @@ const ClientDetails = () => {
 
   return (
     <div className={style.WrapperClientDetails}>
-      <LoadingAndError hasData={!!client} status={status} error={error} size={Size.BIG} text>
+      <LoadingAndError hasData={!!client} status={status} error={error} size={Size.BIG} includeText>
         <List className={style.Container}>
           <List.Content className={style.Info}>
             <Avatar

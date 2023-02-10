@@ -4,34 +4,27 @@ import React from "react";
 import { Loader, Dimmer } from "semantic-ui-react";
 
 import { Size } from "../../constants/size";
+import Status from "../../constants/status";
 import styles from "./LoadingAndError.module.scss";
 
-const LoadingAndError = ({ children, status, error, size, text }) => {
-  const loading = (text) => {
-    if (text) {
-      return <>Loading</>;
-    }
-
-    return null;
-  };
-
+const LoadingAndError = ({ children, status, error, size, includeText }) => {
   const containerClassNames = cx({
-    [styles.ContainerErrorBig]: size == Size.Big && status == "error",
-    [styles.ContainerError]: status == "error",
-    [styles.LoadingContainerBig]: status == "loading" && size == Size.BIG,
-    [styles.LoadingContainer]: status == "loading" && size == Size.SMALL,
+    [styles.ContainerErrorBig]: size == Size.Big && status == Status.ERROR,
+    [styles.ContainerError]: status == Status.ERROR,
+    [styles.LoadingContainerBig]: status == Status.LOADING && size == Size.BIG,
+    [styles.LoadingContainer]: status == Status.LOADING && size == Size.SMALL,
   });
 
-  if (status === "loading") {
+  if (status === Status.LOADING) {
     return (
       <div className={containerClassNames}>
         <Dimmer active>
-          <Loader>{loading(text)}</Loader>
+          <Loader>{includeText && "Loading..."}</Loader>
         </Dimmer>
       </div>
     );
   }
-  if (status === "error") {
+  if (status === Status.ERROR) {
     return <div className={containerClassNames}>{error}</div>;
   }
 
@@ -39,16 +32,18 @@ const LoadingAndError = ({ children, status, error, size, text }) => {
 };
 
 LoadingAndError.defaultProps = {
-  text: false,
+  includeText: false,
+  status: null,
+  error: null,
+  size: Size.SMALL,
 };
 
 LoadingAndError.propTypes = {
   children: PropTypes.node,
   status: PropTypes.string,
   error: PropTypes.string,
-  dependence: PropTypes.bool,
   size: PropTypes.string,
-  text: PropTypes.bool,
+  includeText: PropTypes.bool,
 };
 
 export default LoadingAndError;
