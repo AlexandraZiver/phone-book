@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-import style from "./Backdrop.module.scss";
+import styles from "./Backdrop.module.scss";
 
 const Backdrop = ({ children }) => {
-  return <div className={style.Container}>{children}</div>;
+  return <div className={styles.Container}>{children}</div>;
 };
 
 Backdrop.propTypes = {

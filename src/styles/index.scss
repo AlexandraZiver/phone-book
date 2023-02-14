@@ -16,6 +16,10 @@ ul.ui.list {
   padding-left: 0.7em;
 }
 
+.ui.dimmer {
+  background: transparent;
+}
+
 *,
 a {
   color: theme-color(support);
