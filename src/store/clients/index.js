@@ -1,3 +1,3 @@
-import clients from "./clients.reducer";
+import clients from "../clients";
 
 export default clients;

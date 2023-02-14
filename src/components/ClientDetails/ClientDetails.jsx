@@ -1,27 +1,17 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { List } from "semantic-ui-react";
 
-import { ClientService } from "../../api";
 import { Size } from "../../constants/size";
+import { clientsApi } from "../../store/clients/clientsApi";
 import { Avatar } from "../Icon";
 import LoadingAndError from "../LoadingAndError";
 import style from "./ClientDetails.module.scss";
 
 const ClientDetails = () => {
-  const dispatch = useDispatch();
   const { id } = useParams();
 
-  useEffect(() => {
-    dispatch(ClientService.getClientById(id));
-  }, [id]);
-
-  const {
-    currentClient: client,
-    error,
-    statusClientId: status,
-  } = useSelector((state) => state.clients);
+  const { data: client, error, status } = clientsApi.useFetchClientByIdQuery(id);
 
   return (
     <div className={style.WrapperClientDetails}>
