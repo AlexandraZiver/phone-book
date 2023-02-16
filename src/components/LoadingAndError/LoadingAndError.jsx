@@ -9,13 +9,13 @@ import styles from "./LoadingAndError.module.scss";
 
 const LoadingAndError = ({ children, status, error, size, includeText }) => {
   const containerClassNames = cx({
-    [styles.ContainerErrorBig]: size == Size.Big && status == Status.ERROR,
-    [styles.ContainerError]: status == Status.ERROR,
-    [styles.LoadingContainerBig]: status == Status.LOADING && size == Size.BIG,
-    [styles.LoadingContainer]: status == Status.LOADING && size == Size.SMALL,
+    [styles.ContainerErrorBig]: size == Size.Big && status == Status.REJECTED,
+    [styles.ContainerError]: status == Status.REJECTED,
+    [styles.LoadingContainerBig]: status == Status.PENDING && size == Size.BIG,
+    [styles.LoadingContainer]: status == Status.PENDING && size == Size.SMALL,
   });
 
-  if (status === Status.LOADING) {
+  if (status === Status.PENDING) {
     return (
       <div className={containerClassNames}>
         <Dimmer active>
@@ -24,7 +24,7 @@ const LoadingAndError = ({ children, status, error, size, includeText }) => {
       </div>
     );
   }
-  if (status === Status.ERROR) {
+  if (status === Status.REJECTED) {
     return <div className={containerClassNames}>{error}</div>;
   }
 
