@@ -1,6 +1,6 @@
 const Status = {
   INITIAL: null,
-  LOADING: "loading",
-  ERROR: "error",
+  PENDING: "pending",
+  REJECTED: "rejected",
 };
 export default Status;
