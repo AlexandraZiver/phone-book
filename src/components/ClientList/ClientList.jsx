@@ -9,7 +9,7 @@ import styles from "./ClientList.module.scss";
 import ClientListItem from "./ClientListItem";
 
 const ClientList = () => {
-  const { data: clients, status, error } = clientsApi.useFetchAllClientsQuery("");
+  const { data: clients, status, error } = clientsApi.useFetchAllClientsQuery();
 
   return (
     <List className={styles.Container} selection verticalAlign="middle">
