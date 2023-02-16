@@ -1,7 +1,9 @@
 import { combineReducers } from "redux";
 
-import clientsReducer from "../clients";
+import { clientsApi } from "../clients/clientsApi";
 
-const rootReducer = combineReducers({ clients: clientsReducer });
+const rootReducer = combineReducers({
+  [clientsApi.reducerPath]: clientsApi.reducer,
+});
 
 export default rootReducer;
