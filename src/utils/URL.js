@@ -1,4 +1,4 @@
-const getBoolForUrl = (string) => {
+const isURL = (string) => {
   try {
     new URL(string);
     return false;
@@ -6,4 +6,4 @@ const getBoolForUrl = (string) => {
     return true;
   }
 };
-export default getBoolForUrl;
+export default isURL;

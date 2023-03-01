@@ -1,16 +1,16 @@
 import { createSelector } from "reselect";
 
-import getBoolForUrl from "../../services/createBool";
-import { clientsApi } from "../../store/clients/clientsApi";
+import isURL from "../../utils/URL";
+import { clientsApi } from "../api/clients";
 
-const searchClients = (input) => {
+const searchClients = (textSearch) => {
   return createSelector(clientsApi.endpoints.fetchAllClients.select(), (clients) =>
     clients.data?.filter((object) =>
       Object.values(object).some((value) =>
         Object.values(value)
-          .filter((value) => getBoolForUrl(value))
+          .filter((value) => isURL(value))
           .join("")
-          .match(new RegExp(`${input}`, "gi")),
+          .match(new RegExp(textSearch, "gi")),
       ),
     ),
   );

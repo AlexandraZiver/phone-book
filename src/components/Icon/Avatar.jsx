@@ -2,7 +2,7 @@ import cx from "classnames";
 import PropTypes from "prop-types";
 import React, { useEffect, useMemo, useState } from "react";
 
-import checkImageUrl from "../utils/image";
+import checkImageUrl from "../../utils/image";
 import Abbreviation from "./Abbreviation";
 import styles from "./Avatar.module.scss";
 

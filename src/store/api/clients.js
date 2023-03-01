@@ -7,14 +7,12 @@ export const clientsApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: `${BASE_URL}/clients`,
   }),
-
   endpoints: (build) => ({
     fetchAllClients: build.query({
       query: () => ({
         url: "/",
       }),
     }),
-
     fetchClientById: build.query({
       query: (id) => ({
         url: `/${id}`,
