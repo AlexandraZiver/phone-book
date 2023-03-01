@@ -18,7 +18,7 @@ Search.defaultProps = {
 
 Search.propTypes = {
   value: PropTypes.string,
-  onChange: PropTypes.func,
+  onChange: PropTypes.isRequired,
 };
 
 export default Search;
