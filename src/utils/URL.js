@@ -1,9 +1,8 @@
-const isURL = (string) => {
+export const isURL = (string) => {
   try {
     new URL(string);
-    return false;
-  } catch (string) {
     return true;
+  } catch (error) {
+    return false;
   }
 };
-export default isURL;

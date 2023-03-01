@@ -12,8 +12,13 @@ const Search = ({ value, onChange }) => (
   />
 );
 
+Search.defaultProps = {
+  value: "",
+};
+
 Search.propTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func,
 };
+
 export default Search;

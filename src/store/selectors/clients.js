@@ -1,14 +1,14 @@
-import { createSelector } from "reselect";
+import { createSelector } from "@reduxjs/toolkit";
 
-import isURL from "../../utils/URL";
+import { isURL } from "../../utils/URL";
 import { clientsApi } from "../api/clients";
 
 const searchClients = (textSearch) => {
-  return createSelector(clientsApi.endpoints.fetchAllClients.select(), (clients) =>
-    clients.data?.filter((object) =>
-      Object.values(object).some((value) =>
-        Object.values(value)
-          .filter((value) => isURL(value))
+  return createSelector(clientsApi.endpoints.fetchAllClients.select(), (state) =>
+    state.data?.filter((client) =>
+      Object.values(client).some((clientInfo) =>
+        Object.values(clientInfo)
+          .filter((clientInfoValue) => !isURL(clientInfoValue)) //to avoid the reference in the value
           .join("")
           .match(new RegExp(textSearch, "gi")),
       ),

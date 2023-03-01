@@ -5,7 +5,7 @@ import { List } from "semantic-ui-react";
 import { Size } from "../../constants/size.js";
 import useClients from "../../store/hooks/clients.js";
 import LoadingAndError from "../LoadingAndError";
-import Search from "../Search/Search.jsx";
+import Search from "../Search";
 import styles from "./ClientList.module.scss";
 import ClientListItem from "./ClientListItem";
 
