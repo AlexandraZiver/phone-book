@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { List } from "semantic-ui-react";
 
 import { Size } from "../../constants/size.js";
-import { clientsApi } from "../../store/clients/clientsApi";
+import useClients from "../../store/hooks/clients.js";
 import LoadingAndError from "../LoadingAndError";
+import Search from "../Search";
 import styles from "./ClientList.module.scss";
 import ClientListItem from "./ClientListItem";
 
 const ClientList = () => {
-  const { data: clients, status, error } = clientsApi.useFetchAllClientsQuery();
+  const [searchInput, setSearchInput] = useState("");
+  const { clients: clientsFound, status, error } = useClients(searchInput);
 
   return (
     <List className={styles.Container} selection verticalAlign="middle">
       <LoadingAndError status={status} error={error} size={Size.SMALL}>
-        {clients?.map((client) => (
+        <Search value={searchInput} onChange={(event) => setSearchInput(event.target.value)} />
+        {clientsFound?.map((client) => (
           <Link to={`/clients/${client.id}`} key={client.id}>
             <ClientListItem client={client} />
           </Link>

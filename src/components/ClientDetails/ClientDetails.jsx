@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { List } from "semantic-ui-react";
 
 import { Size } from "../../constants/size";
-import { clientsApi } from "../../store/clients/clientsApi";
+import { clientsApi } from "../../store/api/clients";
 import { Avatar } from "../Icon";
 import LoadingAndError from "../LoadingAndError";
 import style from "./ClientDetails.module.scss";

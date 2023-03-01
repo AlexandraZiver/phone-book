@@ -29,6 +29,13 @@ a {
   display: grid;
   grid-template-columns: 30% 70%;
 }
+
 .ui.text.loader {
-  height: 1em !important; }
+  height: 1em !important; 
+}
+
+.ui.input>input {
+  background-color: theme-color(dark);
+  color: theme-color(support);
+}
   
