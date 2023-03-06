@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import debounce from "lodash.debounce";
+import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { List } from "semantic-ui-react";
 
@@ -11,12 +12,23 @@ import ClientListItem from "./ClientListItem";
 
 const ClientList = () => {
   const [searchInput, setSearchInput] = useState("");
+  const [searchValue, setSearchValue] = useState("");
+  const handleOnChange = (event) => {
+    setSearchValue(event.target.value);
+    debouncedOnChange(event.target.value);
+  };
+
+  const debouncedOnChange = useMemo(
+    () => debounce((searchValue) => setSearchInput(searchValue), 100),
+    [searchValue],
+  );
+
   const { clients: clientsFound, status, error } = useClients(searchInput);
 
   return (
     <List className={styles.Container} selection verticalAlign="middle">
       <LoadingAndError status={status} error={error} size={Size.SMALL}>
-        <Search value={searchInput} onChange={(event) => setSearchInput(event.target.value)} />
+        <Search value={searchValue} onChange={handleOnChange} />
         {clientsFound?.map((client) => (
           <Link to={`/clients/${client.id}`} key={client.id}>
             <ClientListItem client={client} />

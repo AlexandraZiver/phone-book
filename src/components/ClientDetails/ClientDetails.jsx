@@ -10,7 +10,6 @@ import style from "./ClientDetails.module.scss";
 
 const ClientDetails = () => {
   const { id } = useParams();
-
   const { data: client, error, status } = clientsApi.useFetchClientByIdQuery(id);
 
   return (
@@ -38,7 +37,7 @@ const ClientDetails = () => {
           <List.Item>
             <List.Icon className={style.Icon} name="mail" />
             <List.Content>
-              <a href={client?.contact.email}>{client?.contact.email}</a>
+              <a href={"mailto:" + client?.contact.email}>{client?.contact.email}</a>
             </List.Content>
           </List.Item>
           <List.Item>
@@ -66,4 +65,4 @@ const ClientDetails = () => {
   );
 };
 
-export default ClientDetails;
+export const MemoizedClientDetails = React.memo(ClientDetails);

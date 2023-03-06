@@ -1,16 +1,19 @@
 import PropTypes from "prop-types";
 import { Input } from "semantic-ui-react";
 
-const Search = ({ value, onChange }) => (
-  <Input
-    type="text"
-    value={value}
-    name="searchInput"
-    onChange={onChange}
-    icon="search"
-    placeholder="Search..."
-  />
-);
+const Search = ({ value, onChange }) => {
+  // console.log("ooooo");
+  return (
+    <Input
+      type="text"
+      value={value}
+      name="searchInput"
+      onChange={onChange}
+      icon="search"
+      placeholder="Search..."
+    />
+  );
+};
 
 Search.defaultProps = {
   value: "",
@@ -18,7 +21,7 @@ Search.defaultProps = {
 
 Search.propTypes = {
   value: PropTypes.string,
-  onChange: PropTypes.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default Search;

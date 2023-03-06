@@ -1,10 +1,10 @@
-import { createSelector } from "@reduxjs/toolkit";
+import { createSelector } from "reselect";
 
 import { isURL } from "../../utils/URL";
 import { clientsApi } from "../api/clients";
 
 const searchClients = (textSearch) => {
-  return createSelector(clientsApi.endpoints.fetchAllClients.select(), (state) =>
+  return createSelector([clientsApi.endpoints.fetchAllClients.select()], (state) =>
     state.data?.filter((client) =>
       Object.values(client).some((clientInfo) =>
         Object.values(clientInfo)
