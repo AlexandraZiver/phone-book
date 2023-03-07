@@ -5,7 +5,8 @@ import searchClients from "../selectors/clients";
 
 const useClients = (textSearch) => {
   const { data: clients, status, error } = clientsApi.useFetchAllClientsQuery();
-  const clientsFound = useSelector(searchClients(textSearch));
+  const clientsFound = useSelector((state) => searchClients(state, textSearch));
+
   return { clients: clientsFound || clients, status, error };
 };
 
