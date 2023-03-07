@@ -4,7 +4,7 @@ import { List } from "semantic-ui-react";
 
 import { Size } from "../../constants/size";
 import useDebouncedState from "../../hooks/debouncedState";
-import useClients from "../../store/hooks/clients";
+import useClients from "../../store/hooks/useClients";
 import LoadingAndError from "../LoadingAndError";
 import Search from "../Search";
 import styles from "./ClientList.module.scss";
