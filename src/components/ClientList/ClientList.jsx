@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { List } from "semantic-ui-react";
 
-import { Size } from "../../constants/size.js";
-import useClients from "../../store/hooks/clients.js";
-import useDebouncedState from "../../store/hooks/debouncedState.js";
+import { Size } from "../../constants/size";
+import useDebouncedState from "../../hooks/debouncedState";
+import useClients from "../../store/hooks/clients";
 import LoadingAndError from "../LoadingAndError";
 import Search from "../Search";
 import styles from "./ClientList.module.scss";
@@ -13,16 +13,18 @@ import ClientListItem from "./ClientListItem";
 const ClientList = () => {
   const [searchInput, setSearchInput] = useState("");
 
-  const handleOnChange = (event) => {
+  const handleChange = (event) => {
     setSearchInput(event.target.value);
   };
-  const searchValue = useDebouncedState(searchInput, 200);
 
-  const { clients: clientsFound, status, error } = useClients(searchValue);
+  const debouncedSearchInput = useDebouncedState(searchInput);
+
+  const { clients: clientsFound, status, error } = useClients(debouncedSearchInput);
+
   return (
     <List className={styles.Container} selection verticalAlign="middle">
       <LoadingAndError status={status} error={error} size={Size.SMALL}>
-        <Search value={searchInput} onChange={handleOnChange} />
+        <Search value={searchInput} onChange={handleChange} />
         {clientsFound?.map((client) => (
           <Link to={`/clients/${client.id}`} key={client.id}>
             <ClientListItem client={client} />

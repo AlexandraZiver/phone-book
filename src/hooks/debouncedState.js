@@ -12,10 +12,11 @@ const useDebouncedState = (state, delay = 500) => {
     debounced();
 
     return () => {
-      debounced.flush();
+      debounced.cancel();
     };
   }, [state, delay]);
 
   return debouncedState;
 };
+
 export default useDebouncedState;
