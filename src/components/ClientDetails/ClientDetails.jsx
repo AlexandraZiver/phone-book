@@ -65,4 +65,4 @@ const ClientDetails = () => {
   );
 };
 
-export const MemoizedClientDetails = React.memo(ClientDetails);
+export default ClientDetails;
