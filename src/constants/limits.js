@@ -1,2 +1,0 @@
-const LIMIT_VISIBLE_ITEMS = 13;
-export { LIMIT_VISIBLE_ITEMS };
