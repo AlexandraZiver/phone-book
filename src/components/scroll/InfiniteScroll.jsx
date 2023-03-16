@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import { LIMIT_VISIBLE_ITEMS } from "../../constants/limits";
@@ -11,6 +11,7 @@ const InfiniteScrollElement = ({ dataArray, scrollableTargetId, getData }) => {
   const [visible, setVisible] = useState(LIMIT_VISIBLE_ITEMS);
 
   useMemo(() => setVisibleData(dataArray?.slice(0, LIMIT_VISIBLE_ITEMS)), [dataArray]);
+
   const fetchData = () => {
     const newLimit = LIMIT_VISIBLE_ITEMS + visible;
     const dataToAdd = dataArray?.slice(visible, newLimit);
@@ -25,9 +26,12 @@ const InfiniteScrollElement = ({ dataArray, scrollableTargetId, getData }) => {
     }
   };
 
+  useEffect(() => {
+    getData(visibleData);
+  }, [visibleData]);
+
   return (
     <>
-      {getData(visibleData)}
       <InfiniteScroll
         dataLength={visibleData?.length || visible}
         next={fetchData}

@@ -13,7 +13,7 @@ import ClientListItem from "./ClientListItem";
 
 const ClientList = () => {
   const [searchInput, setSearchInput] = useState("");
-  const [visibleData, setVisibleData] = useState();
+  const [visibleClients, setVisibleClients] = useState();
   const debouncedSearchInput = useDebouncedState(searchInput);
 
   const { clients: clientsFound, status, error } = useClients(debouncedSearchInput);
@@ -22,21 +22,21 @@ const ClientList = () => {
     setSearchInput(event.target.value);
   };
 
-  const getData = (value) => {
-    setVisibleData(value);
+  const getVisibleClients = (value) => {
+    setVisibleClients(value);
   };
 
   return (
     <List id="scrollableContainer" className={styles.Container} selection verticalAlign="middle">
       <LoadingAndError status={status} error={error} size={Size.SMALL}>
         <Search value={searchInput} onChange={handleChange} />
-        {visibleData?.map((client) => (
+        {visibleClients?.map((client) => (
           <Link to={`/clients/${client.id}`} key={client.id}>
             <ClientListItem client={client} />
           </Link>
         ))}
         <InfiniteScrollElement
-          getData={getData}
+          getData={getVisibleClients}
           scrollableTargetId="scrollableContainer"
           dataArray={clientsFound}></InfiniteScrollElement>
       </LoadingAndError>
