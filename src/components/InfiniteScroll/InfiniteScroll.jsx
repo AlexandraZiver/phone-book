@@ -1,16 +1,18 @@
 import PropTypes from "prop-types";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-import { LIMIT_VISIBLE_ITEMS } from "../../constants/limits";
 import styles from "./InfiniteScroll.module.scss";
 
-const InfiniteScrollElement = ({ dataArray, scrollableTargetId, getData }) => {
+const screenHeight = window.screen.height;
+const LIMIT_VISIBLE_ITEMS = screenHeight % 64;
+
+const InfiniteScrollElement = ({ dataArray, scrollableTargetId, setData }) => {
   const [visibleData, setVisibleData] = useState();
   const [hasMore, setHasMore] = useState(true);
   const [visible, setVisible] = useState(LIMIT_VISIBLE_ITEMS);
 
-  useMemo(() => setVisibleData(dataArray?.slice(0, LIMIT_VISIBLE_ITEMS)), [dataArray]);
+  useEffect(() => setVisibleData(dataArray?.slice(0, LIMIT_VISIBLE_ITEMS)), [dataArray]);
 
   const fetchData = () => {
     const newLimit = LIMIT_VISIBLE_ITEMS + visible;
@@ -27,26 +29,25 @@ const InfiniteScrollElement = ({ dataArray, scrollableTargetId, getData }) => {
   };
 
   useEffect(() => {
-    getData(visibleData);
+    setData(visibleData);
   }, [visibleData]);
 
   return (
-    <>
-      <InfiniteScroll
-        dataLength={visibleData?.length || visible}
-        next={fetchData}
-        hasMore={hasMore}
-        loader={<p className={styles.Message}>Loading...</p>}
-        scrollableTarget={scrollableTargetId}
-        endMessage={<p className={styles.Message}>No More Data</p>}></InfiniteScroll>
-    </>
+    <InfiniteScroll
+      dataLength={visibleData?.length || visible}
+      next={fetchData}
+      hasMore={hasMore}
+      loader={<p className={styles.Message}>Loading...</p>}
+      scrollableTarget={scrollableTargetId}
+      endMessage={<p className={styles.Message}>No More Data</p>}
+    />
   );
 };
 
 InfiniteScrollElement.propTypes = {
   dataArray: PropTypes.array,
   scrollableTargetId: PropTypes.string.isRequired,
-  getData: PropTypes.func.isRequired,
+  setData: PropTypes.func.isRequired,
 };
 
 export default InfiniteScrollElement;
