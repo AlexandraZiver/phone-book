@@ -5,7 +5,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import styles from "./InfiniteScroll.module.scss";
 
 const screenHeight = window.screen.height;
-const LIMIT_VISIBLE_ITEMS = screenHeight % 64;
+const LIMIT_VISIBLE_ITEMS = screenHeight / 64;
 
 const InfiniteScrollElement = ({ dataArray, scrollableTargetId, setData }) => {
   const [visibleData, setVisibleData] = useState();
