@@ -5,7 +5,7 @@ import { List } from "semantic-ui-react";
 import { Size } from "../../constants/size";
 import useDebouncedState from "../../hooks/useDebouncedState";
 import useClients from "../../store/hooks/clients";
-import InfiniteScrollElement from "../InfiniteScroll";
+import CustomInfiniteScroll from "../InfiniteScroll/CustomInfiniteScroll";
 import LoadingAndError from "../LoadingAndError";
 import Search from "../Search";
 import styles from "./ClientList.module.scss";
@@ -22,10 +22,6 @@ const ClientList = () => {
     setSearchInput(event.target.value);
   };
 
-  const setClientsVisible = (value) => {
-    setVisibleClients(value);
-  };
-
   return (
     <List id="scrollableContainer" className={styles.Container} selection verticalAlign="middle">
       <LoadingAndError status={status} error={error} size={Size.SMALL}>
@@ -35,8 +31,8 @@ const ClientList = () => {
             <ClientListItem client={client} />
           </Link>
         ))}
-        <InfiniteScrollElement
-          setData={setClientsVisible}
+        <CustomInfiniteScroll
+          setData={setVisibleClients}
           scrollableTargetId="scrollableContainer"
           dataArray={clientsFound}
         />

@@ -1,3 +1,1 @@
-import InfiniteScrollElement from "./InfiniteScroll";
-
-export default InfiniteScrollElement;
+export { CustomInfiniteScroll } from "./CustomInfiniteScroll";
