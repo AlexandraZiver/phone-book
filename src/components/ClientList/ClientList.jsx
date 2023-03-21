@@ -5,7 +5,7 @@ import { List } from "semantic-ui-react";
 import { Size } from "../../constants/size";
 import useDebouncedState from "../../hooks/useDebouncedState";
 import useClients from "../../store/hooks/clients";
-import CustomInfiniteScroll from "../InfiniteScroll/CustomInfiniteScroll";
+import CustomInfiniteScroll from "../CustomInfiniteScroll";
 import LoadingAndError from "../LoadingAndError";
 import Search from "../Search";
 import styles from "./ClientList.module.scss";
@@ -35,6 +35,7 @@ const ClientList = () => {
           setData={setVisibleClients}
           scrollableTargetId="scrollableContainer"
           dataArray={clientsFound}
+          Limit={15}
         />
       </LoadingAndError>
     </List>

@@ -1,1 +1,0 @@
-export { CustomInfiniteScroll } from "./CustomInfiniteScroll";
