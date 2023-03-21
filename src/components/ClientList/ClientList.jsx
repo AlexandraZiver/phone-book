@@ -35,7 +35,7 @@ const ClientList = () => {
           setData={setVisibleClients}
           scrollableTargetId="scrollableContainer"
           dataArray={clientsFound}
-          Limit={15}
+          limit={15}
         />
       </LoadingAndError>
     </List>

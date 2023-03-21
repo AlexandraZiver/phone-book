@@ -4,15 +4,15 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 import styles from "./CustomInfiniteScroll.module.scss";
 
-const CustomInfiniteScroll = ({ dataArray, scrollableTargetId, setData, Limit }) => {
+const CustomInfiniteScroll = ({ dataArray, scrollableTargetId, setData, limit }) => {
   const [visibleData, setVisibleData] = useState();
   const [hasMore, setHasMore] = useState(true);
-  const [visible, setVisible] = useState(Limit);
+  const [visible, setVisible] = useState(limit);
 
-  useEffect(() => setVisibleData(dataArray?.slice(0, Limit)), [dataArray]);
+  useEffect(() => setVisibleData(dataArray?.slice(0, limit)), [dataArray]);
 
   const fetchData = useCallback(() => {
-    const newLimit = Limit + visible;
+    const newLimit = limit + visible;
     const dataToAdd = dataArray?.slice(visible, newLimit);
 
     if (dataArray?.length > visibleData?.length) {
@@ -45,7 +45,7 @@ CustomInfiniteScroll.propTypes = {
   dataArray: PropTypes.array,
   scrollableTargetId: PropTypes.string.isRequired,
   setData: PropTypes.func.isRequired,
-  Limit: PropTypes.number.isRequired,
+  limit: PropTypes.number.isRequired,
 };
 
 export default CustomInfiniteScroll;
