@@ -38,4 +38,24 @@ a {
   background-color: theme-color(dark);
   color: theme-color(support);
 }
+
+.ui.icon {
+  display: initial;
+}
+
+i.large.icon, i.large.icons {
+  opacity: 0.8;
+}
+
+i.large.icon:hover {
+font-size: 20px;
+opacity: 0.5;
+}
+
+@media screen and (max-width: 500px) {
+  #root {
+    display: flex;
+    flex-direction: column;
+  }
+} 
   
