@@ -27,7 +27,7 @@ const ClientList = () => {
 
   return (
     <>
-      {screenWidth < 500 && <DropDownList setIsOpen={setOpen} />}
+      {screenWidth <= 500 && <DropDownList setIsOpen={setOpen} />}
       {(isOpen || screenWidth > 500) && (
         <List
           id="scrollableContainer"
