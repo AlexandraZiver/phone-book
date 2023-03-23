@@ -29,25 +29,27 @@ const ClientList = () => {
     <>
       {screenWidth <= 500 && <DropDownList setIsOpen={setOpen} />}
       {(isOpen || screenWidth > 500) && (
-        <List
-          id="scrollableContainer"
-          className={styles.Container}
-          selection
-          verticalAlign="middle">
+        <List className={styles.Container}>
           <Search value={searchInput} onChange={handleChange} />
-          <LoadingAndError status={status} error={error} size={Size.SMALL}>
-            {visibleClients?.map((client) => (
-              <Link to={`/clients/${client.id}`} key={client.id}>
-                <ClientListItem client={client} />
-              </Link>
-            ))}
-            <CustomInfiniteScroll
-              setData={setVisibleClients}
-              scrollableTargetId="scrollableContainer"
-              dataArray={clientsFound}
-              limit={15}
-            />
-          </LoadingAndError>
+          <List
+            id="scrollableContainer"
+            className={styles.Container}
+            selection
+            verticalAlign="middle">
+            <LoadingAndError status={status} error={error} size={Size.SMALL}>
+              {visibleClients?.map((client) => (
+                <Link to={`/clients/${client.id}`} key={client.id}>
+                  <ClientListItem client={client} />
+                </Link>
+              ))}
+              <CustomInfiniteScroll
+                setData={setVisibleClients}
+                scrollableTargetId="scrollableContainer"
+                dataArray={clientsFound}
+                limit={15}
+              />
+            </LoadingAndError>
+          </List>
         </List>
       )}
     </>

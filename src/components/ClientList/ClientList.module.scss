@@ -3,7 +3,7 @@
 
 .Container {
   background-color: theme-color(primary);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 5px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 10px;
   display: flex;
   flex-direction: column;
   gap: 0.3em;
@@ -21,8 +21,6 @@
     position: absolute;
     top: 50px;
     z-index: 10;
-     width: 190px;
-    opacity: 0.9;
-
+    width: 100%;
   }
 }

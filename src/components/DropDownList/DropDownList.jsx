@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
+import { Icon } from "semantic-ui-react";
 
 import styles from "./DropDownList.module.scss";
 
@@ -26,9 +27,9 @@ const DropDownList = ({ setIsOpen }) => {
   return (
     <div className={styles.AdaptiveContainer}>
       <button className={styles.Button} onClick={handleOpen}>
-        {isOpen ? <i className="large close icon" /> : <i className="large bars icon" />}
+        <Icon size="large" name={isOpen ? "close" : "bars"} />
       </button>
-      <p className={styles.Content}> List</p>
+      <p className={styles.Content}>List</p>
     </div>
   );
 };
