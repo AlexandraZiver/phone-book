@@ -1,5 +1,6 @@
 @import "../../styles/theme";
 @import "../../styles/mixins/scroll.scss";
+@import "../../styles/media.scss";
 
 .Container {
   background-color: theme-color(primary);
@@ -16,7 +17,7 @@
   color: theme-color(gray);
 }
 
-@media screen and (max-width:500px){
+@include small{
   .Container {
     position: absolute;
     top: 50px;

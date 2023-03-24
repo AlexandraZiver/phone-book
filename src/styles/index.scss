@@ -1,5 +1,6 @@
 @import "./theme.scss";
 @import "./mixins/background.scss";
+@import "../styles/media.scss";
 
 body {
   width: 100%;
@@ -39,16 +40,7 @@ a {
   color: theme-color(support);
 }
 
-i.large.icon, i.large.icons {
-  opacity: 0.8;
-}
-
-i.large.icon:hover {
-  font-size: 20px;
-  opacity: 0.5;
-}
-
-@media screen and (max-width: 500px) {
+@include small{
   #root {
     display: flex;
     flex-direction: column;
