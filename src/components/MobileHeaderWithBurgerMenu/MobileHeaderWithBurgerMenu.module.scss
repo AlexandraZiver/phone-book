@@ -1,0 +1,28 @@
+@import "../../styles/theme";
+
+.Content {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+}
+
+.AdaptiveContainer {
+  background: theme-color(primary);
+  display: grid;
+  grid-template-columns: 10% 90%;
+  border: 1px solid theme-color(dark);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.Button {
+  background:gray;
+  border: none;
+  border-radius: 5px;
+  padding: 0.2em;
+  border: 1px solid gray;
+  &:hover {
+    background: theme-color(primary);
+    border: 1px solid gray;
+  }
+}

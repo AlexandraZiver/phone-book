@@ -1,5 +1,6 @@
 @import "./theme.scss";
 @import "./mixins/background.scss";
+@import "../styles/media.scss";
 
 body {
   width: 100%;
@@ -38,4 +39,11 @@ a {
   background-color: theme-color(dark);
   color: theme-color(support);
 }
+
+@include screen-mobile{
+  #root {
+    display: flex;
+    flex-direction: column;
+  }
+} 
   
