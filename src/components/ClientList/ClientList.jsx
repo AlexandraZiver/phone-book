@@ -26,9 +26,6 @@ const ClientList = () => {
     setSearchInput(event.target.value);
   };
 
-  console.log("WINDOW_BREAKPOINTS.mobile", WINDOW_BREAKPOINTS.mobile);
-  console.log("screenWidth", screenWidth);
-
   return (
     <>
       {screenWidth <= WINDOW_BREAKPOINTS.mobile && (
@@ -38,7 +35,7 @@ const ClientList = () => {
           onOpen={(newOpen) => setOpen(newOpen)}
         />
       )}
-      {(isOpen || screenWidth >= WINDOW_BREAKPOINTS.mobile) && (
+      {(isOpen || screenWidth > WINDOW_BREAKPOINTS.mobile) && (
         <List className={styles.Container}>
           <Search value={searchInput} onChange={handleChange} />
           <List
