@@ -40,7 +40,7 @@ a {
   color: theme-color(support);
 }
 
-@include small{
+@include screen-mobile{
   #root {
     display: flex;
     flex-direction: column;

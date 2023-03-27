@@ -17,7 +17,7 @@
   color: theme-color(gray);
 }
 
-@include small{
+@include screen-mobile{
   .Container {
     position: absolute;
     top: 50px;

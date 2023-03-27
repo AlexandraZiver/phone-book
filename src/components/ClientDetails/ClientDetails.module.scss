@@ -48,7 +48,7 @@
   @include column;
 }
 
-@include small{
+@include screen-mobile{
   .Container {
     gap: 2em;
   }
