@@ -46,19 +46,21 @@ const ClientDetails = () => {
               {client?.contact.phone}
             </List.Content>
           </List.Item>
-          <List.Content>
+          <List.Item>
             <List.Icon className={style.Icon} name="map" />
-            {client?.address.zipCode}
-          </List.Content>
+            <List.Content>{client?.address.zipCode}</List.Content>
+          </List.Item>
           <List.Item>
             <List.Icon className={style.Icon} name="marker" />
             <List.Content>{client?.address.city}</List.Content>
           </List.Item>
-          <List.Content>
+          <List.Item>
             <List.Icon className={style.Icon} name="map marker alternate" />
-            {client?.address.country}
-            {client?.address.street}
-          </List.Content>
+            <List.Content>
+              {client?.address.country}
+              {client?.address.street}
+            </List.Content>
+          </List.Item>
         </List>
       </LoadingAndError>
     </div>

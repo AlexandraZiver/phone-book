@@ -12,7 +12,9 @@ const useDebouncedState = (state, delay = 500) => {
     debounced();
 
     return () => {
-      debounced.cancel();
+      if (debounced) {
+        debounced.cancel();
+      }
     };
   }, [state, delay]);
 

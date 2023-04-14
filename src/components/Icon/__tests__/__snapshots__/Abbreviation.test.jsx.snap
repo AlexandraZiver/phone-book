@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Abbreviation testing render an abbreviation from one word  1`] = `
+<div>
+  J
+</div>
+`;
+
+exports[`Abbreviation testing renders the abbreviation correctly 1`] = `
+<div>
+  JD
+</div>
+`;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Backdrop render testing testing Backdrop and ChildrenElement 1`] = `
+<div
+  class="Container"
+>
+  <div>
+    Hello
+  </div>
+</div>
+`;
