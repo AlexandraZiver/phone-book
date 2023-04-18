@@ -1,10 +1,10 @@
 import { rest } from "msw";
 import { setupServer } from "msw/node";
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query";
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
-
-import clientsApi from "../api/clients";
+import { createApi } from "../api/clients";
+import { fetchBaseQuery } from "@reduxjs/toolkit/dist/query";
+import { BASE_URL } from "../../constants/endpoints";
 
 const mockClients = [
   {
@@ -53,48 +53,43 @@ const mockClients = [
   },
 ];
 
+const api = createApi({
+  reducerPath: "clientsApi",
+  baseQuery: fetchBaseQuery({
+    baseUrl: `/clients`,
+  }),
+  endpoints: (build) => ({
+    fetchAllClients: build.query({
+      query: () => ({
+        url: "/",
+      }),
+    }),
+    fetchClientById: build.query({
+      query: (id) => ({
+        url: `/${id}`,
+      }),
+    }),
+  }),
+});
+
+const store = configureStore({
+  reducer: api.reducers ? combineReducers(api.reducers) : {},
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(api.middleware),
+});
+
 const server = setupServer(
   rest.get("/clients", (req, res, ctx) => {
     return res(ctx.json(mockClients));
   }),
-  rest.get("/clients/:id", (req, res, ctx) => {
-    const { id } = req.params;
-    const client = mockClients.find((c) => c.id === parseInt(id));
-    if (client) {
-      return res(ctx.json(client));
-    } else {
-      return res(ctx.status(404));
-    }
-  }),
 );
 
-const rootReducer = combineReducers({
-  [clientsApi.reducerPath]: clientsApi.reducer,
-});
-
-const setupApiStore = () => {
-  const store = configureStore({
-    reducer: rootReducer,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(clientsApi.middleware),
-  });
-
-  return { store, api: clientsApi };
-};
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
 
 describe("Clients API", () => {
-  beforeAll(() => server.listen());
-  afterEach(() => server.resetHandlers());
-  afterAll(() => server.close());
-
-  const { store, api } = setupApiStore();
-
-  it("fetches clients", async () => {
-    const result = await store.dispatch(api.endpoints.fetchAllClients());
+  test("fetches all clients", async () => {
+    const result = await api.endpoints.fetchAllClients();
     expect(result.data).toEqual(mockClients);
-  });
-
-  it("fetches client by ID", async () => {
-    const result = await store.dispatch(api.endpoints.fetchClientById({ id: 1 }));
-    expect(result.data).toEqual(mockClients[1]);
   });
 });

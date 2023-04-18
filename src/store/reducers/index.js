@@ -3,7 +3,7 @@ import { combineReducers } from "redux";
 import { clientsApi } from "../api/clients";
 
 const rootReducer = combineReducers({
-  [clientsApi.reducerPath]: clientsApi.reducer,
+  [clientsApi.reducerPath ?? "unknown"]: clientsApi.reducer,
 });
 
 export default rootReducer;

@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 import { BASE_URL } from "../../constants/endpoints";
 
-export const clientsApi = createApi({
+const clientsApi = createApi({
   reducerPath: "clientsApi",
   baseQuery: fetchBaseQuery({
     baseUrl: `${BASE_URL}/clients`,
@@ -20,3 +20,4 @@ export const clientsApi = createApi({
     }),
   }),
 });
+export { createApi, clientsApi };
