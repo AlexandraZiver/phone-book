@@ -19,6 +19,7 @@ jest.mock("semantic-ui-react", () => {
       )),
   };
 });
+
 describe("testing Search ", () => {
   test("testing by onChange of search", () => {
     const handleChange = jest.fn();

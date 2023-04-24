@@ -28,9 +28,13 @@ describe("CustomInfiniteScroll", () => {
         return content.startsWith("No More Data");
       }),
     );
+
     const infiniteScroll = screen.getByTestId("infiniteScroll");
+
     expect(infiniteScroll).toBeInTheDocument();
+
     fireEvent.scroll(infiniteScroll);
+
     expect(setData).toBeCalledTimes(2);
   });
 });

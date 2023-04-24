@@ -30,12 +30,14 @@ describe("checkImageUrl", () => {
   test("returns true for valid image url", async () => {
     const url = "https://example.com/image.jpg";
     const result = await checkImageUrl(url);
+
     expect(result).toBe(true);
   });
 
   test("returns false for invalid image url", async () => {
     const url = "https://example.com/nonexistent-image";
     const result = await checkImageUrl(url);
+
     expect(result).toBe(false);
   });
 });
