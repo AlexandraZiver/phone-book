@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Loader, Dimmer } from "semantic-ui-react";
 
-import { Size } from "../../constants/size";
 import Status from "../../constants/status";
+import { Size } from "../../constants/size";
 import styles from "./LoadingAndError.module.scss";
 
 const LoadingAndError = ({ children, status, error, size, includeText }) => {
   const containerClassNames = cx({
-    [styles.ContainerErrorBig]: size == Size.Big && status == Status.REJECTED,
+    [styles.ContainerErrorBig]: size == Size.BIG && status == Status.REJECTED,
     [styles.ContainerError]: status == Status.REJECTED,
     [styles.LoadingContainerBig]: status == Status.PENDING && size == Size.BIG,
     [styles.LoadingContainer]: status == Status.PENDING && size == Size.SMALL,

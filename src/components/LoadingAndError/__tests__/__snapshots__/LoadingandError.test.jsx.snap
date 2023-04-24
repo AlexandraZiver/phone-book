@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingAndError testing  renders LoadingAndError and  children 1`] = `
+<div
+  data-testid="childComponent"
+>
+  Child component
+</div>
+`;
+
+exports[`LoadingAndError testing  renders LoadingAndError when incorrect props 1`] = `
+<div
+  data-testid="childComponent"
+>
+  Child component
+</div>
+`;
+
+exports[`LoadingAndError testing  renders LoadingAndError when status PENDING and size SMALL 1`] = `
+<div
+  class="LoadingContainer"
+>
+  <div>
+    Loading...
+  </div>
+</div>
+`;
+
+exports[`LoadingAndError testing  renders LoadingAndError when status REJECTED and size SMALL 1`] = `
+<div
+  class="ContainerError"
+/>
+`;
+
+exports[`LoadingAndError testing renders LoadingAndError when status is PENDING and size BIG  1`] = `
+<div
+  class="LoadingContainer"
+>
+  <div>
+    Loading...
+  </div>
+</div>
+`;
+
+exports[`LoadingAndError testing renders LoadingAndError when status is REJECTED and size BIG  1`] = `
+<div
+  class="ContainerErrorBig ContainerError"
+>
+  error
+</div>
+`;

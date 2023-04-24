@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing Search  testing by onChange of search 1`] = `
+<input
+  icon="search"
+  name="searchInput"
+  placeholder="Search..."
+  type="text"
+  value="Hello"
+/>
+`;
+
+exports[`testing Search  testing by placeholder of search 1`] = `
+<input
+  icon="search"
+  name="searchInput"
+  placeholder="Search..."
+  type="text"
+  value=""
+/>
+`;
+
+exports[`testing Search  testing by value of search 1`] = `
+<input
+  icon="search"
+  name="searchInput"
+  placeholder="Search..."
+  type="text"
+  value="Hello"
+/>
+`;

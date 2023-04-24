@@ -29,7 +29,7 @@ const MobileHeaderWithBurgerMenu = ({ isOpen, title, onOpen }) => {
 };
 
 MobileHeaderWithBurgerMenu.propTypes = {
-  isOpen: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired,
   title: PropTypes.string,
   onOpen: PropTypes.func.isRequired,
 };

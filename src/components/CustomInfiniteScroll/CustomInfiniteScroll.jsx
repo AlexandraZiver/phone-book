@@ -6,10 +6,13 @@ import styles from "./CustomInfiniteScroll.module.scss";
 
 const CustomInfiniteScroll = ({ dataArray, scrollableTargetId, setData, limit }) => {
   const [visibleData, setVisibleData] = useState();
-  const [hasMore, setHasMore] = useState(true);
+  const [hasMore, setHasMore] = useState();
   const [visible, setVisible] = useState(limit);
 
-  useEffect(() => setVisibleData(dataArray?.slice(0, limit)), [dataArray]);
+  useEffect(() => {
+    setVisibleData(dataArray?.slice(0, limit));
+    setHasMore(true);
+  }, [dataArray]);
 
   const fetchData = useCallback(() => {
     const newLimit = limit + visible;
