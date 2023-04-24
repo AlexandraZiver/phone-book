@@ -20,7 +20,34 @@ The program was partially tested with Jest and React testing library tools.
 <img width="497" alt="image" src="https://user-images.githubusercontent.com/91556009/233979291-c0117300-e094-43d5-bca2-d88ceb27f197.png">
 
 
+# Getting Started
 
+-Clone the repository to a new folder using the command `git clone (https://github.com/DARKSWAAN/phone-book`
+
+-Install the project dependencies using the `npm install` command. This command will install all the dependencies specified in the package.json file.
+
+-Start the project using the `npm run start command`.
+
+# Available Scripts
+In the project directory, you can run:
+
+`npm run start`: This command will start the development of the project and open it in the browser at http://localhost:3000 and `start` the local database http://localhost:8000.
+
+`npm client:start`This script starts the client part of the application. Using the react-scripts package, it starts the development server and opens the app in the browser.
+
+`npm server:start` This script runs the backend of the application using json-server, which provides a simple API to manipulate data from the db.json file.
+
+
+`npm run test`: This script runs tests using the jest package and generates a coverage report.
+
+`npm lint`: This script runs the eslint code linter on all files in the project.
+
+`npm lint`:fix: This script runs the eslint code linter and fixes any detected problems that can be automatically fixed.
+
+`npm eject`: This script outputs configuration settings, styles, and other settings to the project so that you can manage them without using react-scripts.
+ 
+ 
+ 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -37,13 +64,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm run
-test`
+### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### `npm build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -53,7 +79,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `npm  eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
