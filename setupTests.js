@@ -3,7 +3,7 @@ import { JSDOM } from "jsdom";
 const jsdom = new JSDOM("<!doctype html><html><body></body></html>");
 const { window } = jsdom;
 
-global.TextEncoder = require("util").TextEncoder; // Добавляем полифилл для TextEncoder
+global.TextEncoder = require("util").TextEncoder; // Add a polyfill for TextEncoder
 
 global.window = window;
 global.document = window.document;
