@@ -1,5 +1,4 @@
-# The name of project
-the phone-book 
+# The phone-book 
 
 # Project description
 The phone-book project is an application that provides the ability to display users from a local database in a list and on the main screen.
